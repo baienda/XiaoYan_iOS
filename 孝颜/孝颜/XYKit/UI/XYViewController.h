@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LXAlertView.h"
+//#import "LXAlertView.h"
 #import "XYNavigationBar.h"
 #import "ApiParams.h"
 #import "ApiClient.h"
