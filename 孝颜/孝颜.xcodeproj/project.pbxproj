@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4308DADB1F3C4A2800EE0E73 /* SelectCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DADA1F3C4A2800EE0E73 /* SelectCityController.m */; };
 		4308DADE1F3C4ED200EE0E73 /* CourseDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DADD1F3C4ED200EE0E73 /* CourseDetailsController.m */; };
+		4308DAE11F3C5D0C00EE0E73 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAE01F3C5D0C00EE0E73 /* ActivityCell.m */; };
+		4308DAE41F3C64CF00EE0E73 /* ActivityDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAE31F3C64CF00EE0E73 /* ActivityDetailsController.m */; };
+		4308DAE71F3C6D5000EE0E73 /* SelectCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAE61F3C6D5000EE0E73 /* SelectCityCell.m */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -173,6 +176,12 @@
 		4308DADA1F3C4A2800EE0E73 /* SelectCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityController.m; sourceTree = "<group>"; };
 		4308DADC1F3C4ED200EE0E73 /* CourseDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailsController.h; sourceTree = "<group>"; };
 		4308DADD1F3C4ED200EE0E73 /* CourseDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDetailsController.m; sourceTree = "<group>"; };
+		4308DADF1F3C5D0C00EE0E73 /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
+		4308DAE01F3C5D0C00EE0E73 /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
+		4308DAE21F3C64CF00EE0E73 /* ActivityDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailsController.h; sourceTree = "<group>"; };
+		4308DAE31F3C64CF00EE0E73 /* ActivityDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailsController.m; sourceTree = "<group>"; };
+		4308DAE51F3C6D5000EE0E73 /* SelectCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityCell.h; sourceTree = "<group>"; };
+		4308DAE61F3C6D5000EE0E73 /* SelectCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityCell.m; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -594,6 +603,8 @@
 			children = (
 				439CF8B01F3BE6240093BE8B /* ActivityViewController.h */,
 				439CF8B11F3BE6240093BE8B /* ActivityViewController.m */,
+				4308DAE21F3C64CF00EE0E73 /* ActivityDetailsController.h */,
+				4308DAE31F3C64CF00EE0E73 /* ActivityDetailsController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -615,6 +626,8 @@
 		439CF8791F3BE02B0093BE8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4308DADF1F3C5D0C00EE0E73 /* ActivityCell.h */,
+				4308DAE01F3C5D0C00EE0E73 /* ActivityCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -740,6 +753,8 @@
 			children = (
 				439CF9741F3C2D670093BE8B /* HotCourseCell.h */,
 				439CF9751F3C2D670093BE8B /* HotCourseCell.m */,
+				4308DAE51F3C6D5000EE0E73 /* SelectCityCell.h */,
+				4308DAE61F3C6D5000EE0E73 /* SelectCityCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1540,6 +1555,7 @@
 				439CFA321F3C3DA30093BE8B /* NSData+YYAdd.m in Sources */,
 				439CFA361F3C3DA30093BE8B /* NSNotificationCenter+YYAdd.m in Sources */,
 				439CFA631F3C3DA30093BE8B /* YYTextDebugOption.m in Sources */,
+				4308DAE41F3C64CF00EE0E73 /* ActivityDetailsController.m in Sources */,
 				439CF8E61F3BEA670093BE8B /* UIView+SubView.m in Sources */,
 				439CFA371F3C3DA30093BE8B /* NSNumber+YYAdd.m in Sources */,
 				4308DADB1F3C4A2800EE0E73 /* SelectCityController.m in Sources */,
@@ -1554,6 +1570,7 @@
 				439CFA511F3C3DA30093BE8B /* YYMemoryCache.m in Sources */,
 				439CF93E1F3BFA0E0093BE8B /* UIScrollView+MJExtension.m in Sources */,
 				439CFA601F3C3DA30093BE8B /* NSObject+YYModel.m in Sources */,
+				4308DAE71F3C6D5000EE0E73 /* SelectCityCell.m in Sources */,
 				439CF8F81F3BEA800093BE8B /* Hacks.m in Sources */,
 				439CFA301F3C3DA30093BE8B /* NSArray+YYAdd.m in Sources */,
 				439CFA521F3C3DA30093BE8B /* _YYWebImageSetter.m in Sources */,
@@ -1597,6 +1614,7 @@
 				439CFA6B1F3C3DA30093BE8B /* NSAttributedString+YYText.m in Sources */,
 				439CF8DF1F3BEA670093BE8B /* NSDate+time.m in Sources */,
 				439CF9761F3C2D670093BE8B /* HotCourseCell.m in Sources */,
+				4308DAE11F3C5D0C00EE0E73 /* ActivityCell.m in Sources */,
 				439CFA661F3C3DA30093BE8B /* YYTextKeyboardManager.m in Sources */,
 				439CFA3A1F3C3DA30093BE8B /* NSObject+YYAddForKVO.m in Sources */,
 				439CFA691F3C3DA30093BE8B /* YYTextMagnifier.m in Sources */,
