@@ -62,8 +62,8 @@ AppDelegate *AppDelegateInstance = nil;
     return array[0];
 }
 
-- (NSString *)getUUid
-{
+//- (NSString *)getUUid
+//{
 //    NSString *uuid = [UserDefault getString:@"uuid"];
 //    if(uuid.length == 0){
 //        CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);
@@ -72,7 +72,7 @@ AppDelegate *AppDelegateInstance = nil;
 //        uuid = strUUID;
 //    }
 //    return uuid;
-}
+//}
 
 - (NSString *)getUA
 {
@@ -117,11 +117,11 @@ AppDelegate *AppDelegateInstance = nil;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-    [CRToastManager setDefaultOptions:@{kCRToastNotificationTypeKey : @(CRToastTypeNavigationBar),
-                                        kCRToastFontKey             : [UIFont fontWithName:@"HelveticaNeue-Light" size:16],
-                                        kCRToastTextColorKey        : [UIColor whiteColor],
-                                        kCRToastBackgroundColorKey  : [UIColor orangeColor],
-                                        kCRToastAutorotateKey       : @(YES)}];
+//    [CRToastManager setDefaultOptions:@{kCRToastNotificationTypeKey : @(CRToastTypeNavigationBar),
+//                                        kCRToastFontKey             : [UIFont fontWithName:@"HelveticaNeue-Light" size:16],
+//                                        kCRToastTextColorKey        : [UIColor whiteColor],
+//                                        kCRToastBackgroundColorKey  : [UIColor orangeColor],
+//                                        kCRToastAutorotateKey       : @(YES)}];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     [[UIView appearance] setExclusiveTouch:YES];
@@ -202,7 +202,7 @@ AppDelegate *AppDelegateInstance = nil;
 
 // 将得到的deviceToken传给SDK
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
-    [[IMCore instance] onApplication:application deviceToken:deviceToken];
+//    [[IMCore instance] onApplication:application deviceToken:deviceToken];
 }
 
 // 注册deviceToken失败
@@ -215,14 +215,14 @@ AppDelegate *AppDelegateInstance = nil;
     
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-            options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
-{
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                          openURL:url
-                                                          options:options];
-}
+//- (BOOL)application:(UIApplication *)application
+//            openURL:(NSURL *)url
+//            options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+//{
+//    return [[FBSDKApplicationDelegate sharedInstance] application:application
+//                                                          openURL:url
+//                                                          options:options];
+//}
 
 // Still need this for iOS8
 - (BOOL)application:(UIApplication *)application
@@ -230,10 +230,10 @@ AppDelegate *AppDelegateInstance = nil;
   sourceApplication:(nullable NSString *)sourceApplication
          annotation:(nonnull id)annotation
 {
-    [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                   openURL:url
-                                         sourceApplication:sourceApplication
-                                                annotation:annotation];
+//    [[FBSDKApplicationDelegate sharedInstance] application:application
+//                                                   openURL:url
+//                                         sourceApplication:sourceApplication
+//                                                annotation:annotation];
     return YES;
 }
 
@@ -247,13 +247,13 @@ AppDelegate *AppDelegateInstance = nil;
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [[IMCore instance] onApplicationDidEnterBackground:application];
+//    [[IMCore instance] onApplicationDidEnterBackground:application];
     
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [[IMCore instance] onApplicationWillEnterForeground:application];
-    _enterForeground = YES;
+//    [[IMCore instance] onApplicationWillEnterForeground:application];
+//    _enterForeground = YES;
     
     //广播应用被激活
     [[NSNotificationCenter defaultCenter] postNotificationName:NoticeLocationAppBackground object:nil];
@@ -281,12 +281,12 @@ AppDelegate *AppDelegateInstance = nil;
     [[NSUserDefaults standardUserDefaults]synchronize];
     
     //打点
-    [FBSDKAppEvents activateApp];
+//    [FBSDKAppEvents activateApp];
     
     //查看网络消息
     [self refreshNetworkStatus];
     
-    [Emoji instance];
+//    [Emoji instance];
     
     [self updateLocation];
     
@@ -343,13 +343,13 @@ AppDelegate *AppDelegateInstance = nil;
     }
 }
 
-- (CCNavigationController *)loginNavigationController
+- (XYNavigationController *)loginNavigationController
 {
     if (_loginNavigationController == nil)
     {
         UIViewController *rootController = [[WelcomeViewController alloc] init];
         
-        _loginNavigationController = [CCNavigationController navigationControllerWithControllers:@[rootController]];
+        _loginNavigationController = [XYNavigationController navigationControllerWithControllers:@[rootController]];
     }
     
     return _loginNavigationController;
@@ -357,25 +357,25 @@ AppDelegate *AppDelegateInstance = nil;
 
 - (void)presentGuideController
 {
-    if (![[NSThread currentThread] isMainThread])
-    {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self presentGuideController];
-        });
-        return;
-    }
-    else
-    {
-        NSMutableArray *images = [NSMutableArray new];
-        [images addObject:[UIImage imageNamed:@"lead_page"]];
-        
-        NSArray *titles = @[@""];
-        NSArray *secondTitles = @[@""];
-        
-        HcdGuideView *guideView = [HcdGuideView sharedInstance];
-        guideView.window = self.window;
-        [guideView showGuideViewWithImages:images andTitles:titles andSecondTitles:secondTitles andPoints:nil];
-    }
+//    if (![[NSThread currentThread] isMainThread])
+//    {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self presentGuideController];
+//        });
+//        return;
+//    }
+//    else
+//    {
+//        NSMutableArray *images = [NSMutableArray new];
+//        [images addObject:[UIImage imageNamed:@"lead_page"]];
+//        
+//        NSArray *titles = @[@""];
+//        NSArray *secondTitles = @[@""];
+//        
+//        HcdGuideView *guideView = [HcdGuideView sharedInstance];
+//        guideView.window = self.window;
+//        [guideView showGuideViewWithImages:images andTitles:titles andSecondTitles:secondTitles andPoints:nil];
+//    }
     
 }
 
@@ -391,7 +391,7 @@ AppDelegate *AppDelegateInstance = nil;
     }
     else
     {
-        CCNavigationController *loginNavigationController = [self loginNavigationController];
+        XYNavigationController *loginNavigationController = [self loginNavigationController];
         NSMutableArray *viewControllers = [[loginNavigationController viewControllers] mutableCopy];
         
         [loginNavigationController setViewControllers:viewControllers animated:false];
@@ -432,12 +432,12 @@ AppDelegate *AppDelegateInstance = nil;
 -(void)doLogout
 {
     //退出环信
-    [[IMCore instance] logout:nil];
+//    [[IMCore instance] logout:nil];
     
     //清除UserDefaults
     [UserConfig clearConfig];
     
-    [FBSDKAccessToken setCurrentAccessToken:nil];
+//    [FBSDKAccessToken setCurrentAccessToken:nil];
     
     
     dispatch_async(dispatch_get_main_queue(), ^

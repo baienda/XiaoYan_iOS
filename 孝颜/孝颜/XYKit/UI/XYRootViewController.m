@@ -7,15 +7,15 @@
 //
 
 #import "XYRootViewController.h"
-#import "XYRootTabletView.h"
+#import "XYRootTableView.h"
 #import "XYNavigationController.h"
 
 @interface XYRootViewController ()
 {
-    CCRootTabletView *_mainView;
+    XYRootTableView *_mainView;
     
-    CCNavigationController *_masterNavigationController;
-    CCNavigationController *_detailNavigationController;
+    XYNavigationController *_masterNavigationController;
+    XYNavigationController *_detailNavigationController;
     
     BOOL _hasLoadViewDone;
 }

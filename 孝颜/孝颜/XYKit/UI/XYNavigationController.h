@@ -8,6 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    PresentationStyleDefault = 0,
+    PresentationStyleRootInPopover = 1,
+    PresentationStyleChildInPopover = 2,
+    PresentationStyleInFormSheet = 3
+} NavigationControllerPresentationStyle;
+
 @interface XYNavigationController : UINavigationController
+
+@property (nonatomic) bool isInControllerTransition;
+@property (nonatomic) NavigationControllerPresentationStyle presentationStyle;
+
+- (void)setupNavigationBarForController:(UIViewController *)viewController animated:(bool)animated;
+
++ (XYNavigationController *)navigationControllerWithControllers:(NSArray *)controllers;
+
++ (XYNavigationController *)navigationControllerWithRootController:(UIViewController *)controller;
+
++ (XYNavigationController *)navigationControllerWithControllers:(NSArray *)controllers navigationBarClass:(Class)navigationBarClass;
 
 @end

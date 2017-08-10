@@ -8,10 +8,24 @@
 
 #import "XYViewController.h"
 #import "XYNavigationBar.h"
+//#import "CRToast.h"
+#import "UIView+animation.h"
 
 @interface XYViewController ()
 
 @property (nonatomic, strong) XYNavigationBar *navigationBar;
+@property (nonatomic, strong) UINavigationItem *navigationItem1;
+
+@property (nonatomic, strong) UIView *loadingView;
+@property (nonatomic, strong) UIImageView *loadingImageView;
+@property (nonatomic, strong) UIImageView *loadSuccessView;
+@property (nonatomic, strong) UILabel *loadingTextView;
+@property (nonatomic, strong) UIView *pageLoadingView;
+@property (nonatomic, strong) UIImageView *pageLoadingImageView;
+
+@property (nonatomic, strong) NSArray *sortedArray;//最新IM消息
+
+@property (nonatomic, assign) BOOL animationFinished;
 
 @end
 
@@ -134,7 +148,7 @@
 {
     //初始化自定义导航栏
     if(_navigationBar == nil){
-        _navigationBar = [[CCNavigationBar alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, 64.0) barStyle:barStyle];
+        _navigationBar = [[XYNavigationBar alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, 64.0) barStyle:barStyle];
         _navigationItem1 = [[UINavigationItem alloc] init];
         [_navigationBar setItems:@[_navigationItem1]];
         [self.view addSubview:_navigationBar];
@@ -279,7 +293,7 @@
     {
         isWidescreenInitialized = true;
         
-        CGSize screenSize = [CCViewController screenSizeForInterfaceOrientation:UIInterfaceOrientationPortrait];
+        CGSize screenSize = [XYViewController screenSizeForInterfaceOrientation:UIInterfaceOrientationPortrait];
         if (screenSize.width > 321 || screenSize.height > 481)
             isWidescreen = true;
     }
@@ -299,278 +313,278 @@
     return size;
 }
 
-//居中
-- (void)alert:(NSString *)message button:(NSString *)button click:(LXAlertClickIndexBlock)click
-{
-    @synchronized(alertView)
-    {
-        [self hideLoading];
-        if(alertView != nil)
-        {
-            [alertView dismissAlertView];
-            alertView = nil;
-        }
-        alertView = [[LXAlertView alloc]initWithTitle:Localized(@"tips") message:message cancelBtnTitle:nil otherBtnTitle:button clickIndexBlock:click and:YES and:YES];
-        [alertView showLXAlertView];
-    }
-}
-//居左
-- (void)alertLeft:(NSString *)message button:(NSString *)button click:(LXAlertClickIndexBlock)click
-{
-    @synchronized(alertView)
-    {
-        
-        [self hideLoading];
-        if(alertView != nil)
-        {
-            [alertView dismissAlertView];
-            alertView = nil;
-        }
-        alertView = [[LXAlertView alloc]initWithTitle:Localized(@"tips") message:message cancelBtnTitle:nil otherBtnTitle:button clickIndexBlock:click and:YES and:NO];
-        [alertView showLXAlertView];
-    }
-}
-- (void)confirm:(NSString *)message button1:(NSString *)button1 button2:(NSString *)button2 click:(LXAlertClickIndexBlock)click
-{
-    @synchronized(alertView)
-    {
-        [self hideLoading];
-        if(alertView != nil)
-        {
-            [alertView dismissAlertView];
-            alertView = nil;
-        }
-        alertView = [[LXAlertView alloc]initWithTitle:Localized(@"tips") message:message cancelBtnTitle:button1 otherBtnTitle:button2 clickIndexBlock:click and:YES and:YES];
-        [alertView showLXAlertView];
-    }
-}
+////居中
+//- (void)alert:(NSString *)message button:(NSString *)button click:(LXAlertClickIndexBlock)click
+//{
+//    @synchronized(alertView)
+//    {
+//        [self hideLoading];
+//        if(alertView != nil)
+//        {
+//            [alertView dismissAlertView];
+//            alertView = nil;
+//        }
+//        alertView = [[LXAlertView alloc]initWithTitle:Localized(@"tips") message:message cancelBtnTitle:nil otherBtnTitle:button clickIndexBlock:click and:YES and:YES];
+//        [alertView showLXAlertView];
+//    }
+//}
+////居左
+//- (void)alertLeft:(NSString *)message button:(NSString *)button click:(LXAlertClickIndexBlock)click
+//{
+//    @synchronized(alertView)
+//    {
+//        
+//        [self hideLoading];
+//        if(alertView != nil)
+//        {
+//            [alertView dismissAlertView];
+//            alertView = nil;
+//        }
+//        alertView = [[LXAlertView alloc]initWithTitle:Localized(@"tips") message:message cancelBtnTitle:nil otherBtnTitle:button clickIndexBlock:click and:YES and:NO];
+//        [alertView showLXAlertView];
+//    }
+//}
+//- (void)confirm:(NSString *)message button1:(NSString *)button1 button2:(NSString *)button2 click:(LXAlertClickIndexBlock)click
+//{
+//    @synchronized(alertView)
+//    {
+//        [self hideLoading];
+//        if(alertView != nil)
+//        {
+//            [alertView dismissAlertView];
+//            alertView = nil;
+//        }
+//        alertView = [[LXAlertView alloc]initWithTitle:Localized(@"tips") message:message cancelBtnTitle:button1 otherBtnTitle:button2 clickIndexBlock:click and:YES and:YES];
+//        [alertView showLXAlertView];
+//    }
+//}
 
-- (void)showLoading :(BOOL)isload
-{
-    if(self.loadingView == nil){
-        self.loadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, DEVICE_SIZE.height)];
-        [self.navigationController.view addSubview:self.loadingView];
-        
-        UIView *maskView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, DEVICE_SIZE.height)];
-        maskView.backgroundColor = [UIColor blackColor];
-        maskView.alpha = 0.5;
-        [self.loadingView addSubview:maskView];
-        
-        UIImageView *backImageView = [[UIImageView alloc]init];
-        backImageView.image = [UIImage imageNamed:@"load_bg"];
-        backImageView.bounds = CGRectMake(0, 0, 100 * autoLayoutX, 100 * autoLayoutX);
-        backImageView.center = CGPointMake(DEVICE_SIZE.width/2.0, DEVICE_SIZE.height/2.0 + 5);
-        [self.loadingView addSubview:backImageView];
-        
-        UIImageView *loadView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"load_progress"]];
-        loadView.bounds = CGRectMake(0, 0, 58 * autoLayoutX, 58 * autoLayoutX);
-        loadView.center = CGPointMake(backImageView.frame.size.width/2.0, backImageView.frame.size.height/2.0 - 10);
-        
-        UIImageView *loadSuccessView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"load_success"]];
-        loadSuccessView.bounds = CGRectMake(0, 0, 58 * autoLayoutX, 58 * autoLayoutX);
-        loadSuccessView.center = CGPointMake(backImageView.frame.size.width/2.0, backImageView.frame.size.height/2.0 - 10);
-        loadSuccessView.hidden = YES;
-        self.loadSuccessView = loadSuccessView;
-        [backImageView addSubview:loadSuccessView];
-        
-        UILabel *loadingLabel = [[UILabel alloc]init];
-        loadingLabel.text = isload ? Localized(@"loading") : Localized(@"posting");
-        loadingLabel.font = kFont(12 * autoLayoutY);
-        loadingLabel.textColor = kSecondTitleColor;
-        loadingLabel.textAlignment = NSTextAlignmentCenter;
-        loadingLabel.bounds = CGRectMake(0, 0, 80, 20);
-        loadingLabel.center = CGPointMake(backImageView.frame.size.width/2.0, backImageView.frame.size.height/2.0 + 35);
-        [backImageView addSubview:loadingLabel];
-        self.loadingTextView = loadingLabel;
-        
-        //        [UIView RotateAnimationShowView:loadView];
-        
-        [self rotateImageView:loadView];
-        [backImageView addSubview:loadView];
-        self.loadingImageView = loadView;
-        
-        
-        UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [leftBtn addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
-        leftBtn.imageEdgeInsets = UIEdgeInsetsMake(3, 3, 3, 3);
-        [self.loadingView addSubview:leftBtn];
-        
-        [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(10);
-            make.top.mas_equalTo(10);
-            make.width.mas_equalTo(44);
-            make.height.mas_equalTo(44);
-        }];
-    }
-}
+//- (void)showLoading :(BOOL)isload
+//{
+//    if(self.loadingView == nil){
+//        self.loadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, DEVICE_SIZE.height)];
+//        [self.navigationController.view addSubview:self.loadingView];
+//        
+//        UIView *maskView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, DEVICE_SIZE.height)];
+//        maskView.backgroundColor = [UIColor blackColor];
+//        maskView.alpha = 0.5;
+//        [self.loadingView addSubview:maskView];
+//        
+//        UIImageView *backImageView = [[UIImageView alloc]init];
+//        backImageView.image = [UIImage imageNamed:@"load_bg"];
+//        backImageView.bounds = CGRectMake(0, 0, 100 * autoLayoutX, 100 * autoLayoutX);
+//        backImageView.center = CGPointMake(DEVICE_SIZE.width/2.0, DEVICE_SIZE.height/2.0 + 5);
+//        [self.loadingView addSubview:backImageView];
+//        
+//        UIImageView *loadView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"load_progress"]];
+//        loadView.bounds = CGRectMake(0, 0, 58 * autoLayoutX, 58 * autoLayoutX);
+//        loadView.center = CGPointMake(backImageView.frame.size.width/2.0, backImageView.frame.size.height/2.0 - 10);
+//        
+//        UIImageView *loadSuccessView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"load_success"]];
+//        loadSuccessView.bounds = CGRectMake(0, 0, 58 * autoLayoutX, 58 * autoLayoutX);
+//        loadSuccessView.center = CGPointMake(backImageView.frame.size.width/2.0, backImageView.frame.size.height/2.0 - 10);
+//        loadSuccessView.hidden = YES;
+//        self.loadSuccessView = loadSuccessView;
+//        [backImageView addSubview:loadSuccessView];
+//        
+//        UILabel *loadingLabel = [[UILabel alloc]init];
+//        loadingLabel.text = isload ? Localized(@"loading") : Localized(@"posting");
+//        loadingLabel.font = kFont(12 * autoLayoutY);
+//        loadingLabel.textColor = kSecondTitleColor;
+//        loadingLabel.textAlignment = NSTextAlignmentCenter;
+//        loadingLabel.bounds = CGRectMake(0, 0, 80, 20);
+//        loadingLabel.center = CGPointMake(backImageView.frame.size.width/2.0, backImageView.frame.size.height/2.0 + 35);
+//        [backImageView addSubview:loadingLabel];
+//        self.loadingTextView = loadingLabel;
+//        
+//        //        [UIView RotateAnimationShowView:loadView];
+//        
+//        [self rotateImageView:loadView];
+//        [backImageView addSubview:loadView];
+//        self.loadingImageView = loadView;
+//        
+//        
+//        UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [leftBtn addTarget:self action:@selector(popViewController) forControlEvents:UIControlEventTouchUpInside];
+//        leftBtn.imageEdgeInsets = UIEdgeInsetsMake(3, 3, 3, 3);
+//        [self.loadingView addSubview:leftBtn];
+//        
+//        [leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.mas_equalTo(10);
+//            make.top.mas_equalTo(10);
+//            make.width.mas_equalTo(44);
+//            make.height.mas_equalTo(44);
+//        }];
+//    }
+//}
+//
+//- (void)showLoadingSuccss
+//{
+//    if(self.loadingView != nil)
+//    {
+//        self.loadingTextView.text = Localized(@"success");
+//        self.loadingImageView.tag = 0;
+//        [self.loadingImageView removeFromSuperview];
+//        [self.loadingImageView.layer removeAllAnimations];
+//        self.loadSuccessView.hidden = NO;
+//        
+//        double delayInSeconds = 0.7;
+//        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//        dispatch_after(popTime, dispatch_get_main_queue(), ^
+//                       {
+//                           [self hideLoading];
+//                       });
+//        
+//    }
+//}
+//
+//- (void)hideLoading
+//{
+//    if(self.loadingView != nil){
+//        [self.loadingView removeFromSuperview];
+//        [self.loadingImageView removeFromSuperview];
+//        [self.loadingImageView.layer removeAllAnimations];
+//        self.loadingView = nil;
+//        self.loadingImageView = nil;
+//        self.animationFinished = YES;
+//    }
+//}
+//
+//- (void)showPageLoading
+//{
+//    if(self.pageLoadingView == nil){
+//        int bottomHeight = 0;
+//        if([self isKindOfClass:[FriendMomentController class]])
+//        {
+//            bottomHeight = 49;
+//        }
+//        self.pageLoadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, DEVICE_SIZE.width, DEVICE_SIZE.height - 64 - bottomHeight)];
+//        [self.navigationController.view addSubview:self.pageLoadingView];
+//        
+//        NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"three_1"],[UIImage imageNamed:@"three_2"],[UIImage imageNamed:@"three_3"], nil];
+//        self.pageLoadingImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, DEVICE_SIZE.width/2)];
+//        self.pageLoadingImageView.animationImages = array; //动画图片数组
+//        self.pageLoadingImageView.animationDuration = 0.8; //执行一次完整动画所需的时长
+//        self.pageLoadingImageView.animationRepeatCount = 0;  //动画重复次数 0表示无限次，默认为0
+//        
+//        UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, DEVICE_SIZE.height-128 - bottomHeight)];
+//        self.pageLoadingImageView.center = backgroundView.center;
+//        [backgroundView addSubview:self.pageLoadingImageView];
+//        [self.pageLoadingView addSubview:backgroundView];
+//        
+//        [self.navigationController.view addSubview:self.pageLoadingView];
+//    }
+//    self.pageLoadingView.hidden = NO;
+//    [self.pageLoadingImageView startAnimating];
+//    
+//}
+//
+//- (void)hidePageLoading
+//{
+//    if(self.pageLoadingView != nil){
+//        self.pageLoadingView.hidden = YES;
+//        [self.pageLoadingImageView stopAnimating];
+//    }
+//}
+//
+//- (void)rotateImageView:(UIImageView *)imageView{
+//    // 一秒钟旋转几圈
+//    CGFloat circleByOneSecond = 4.0f;
+//    
+//    imageView.tag = 1;
+//    
+//    // 执行动画
+//    [UIView animateWithDuration:1.f / circleByOneSecond
+//                          delay:0
+//                        options:UIViewAnimationOptionCurveLinear
+//                     animations:^{
+//                         imageView.transform = CGAffineTransformRotate(imageView.transform, M_PI_2);
+//                     }
+//                     completion:^(BOOL finished){
+//                         if (!_animationFinished) {
+//                             if(imageView.tag == 1)
+//                                 [self rotateImageView:imageView];
+//                         }
+//                     }];
+//}
+//
+//- (UIImageView *)rotate360DegreeWithImageView:(UIImageView *)imageView{
+//    CABasicAnimation *animation = [CABasicAnimation
+//                                   animationWithKeyPath:@"transform"];
+//    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+//    
+//    animation.toValue = [NSValue valueWithCATransform3D:
+//                         CATransform3DMakeRotation(M_PI/2.0, 0.0, 0.0, 1.0) ];
+//    animation.duration = 0.25;
+//    
+//    animation.cumulative = YES;
+//    animation.repeatCount = MAXFLOAT;
+//    
+//    [imageView.layer addAnimation:animation forKey:nil];
+//    return imageView;
+//}
 
-- (void)showLoadingSuccss
-{
-    if(self.loadingView != nil)
-    {
-        self.loadingTextView.text = Localized(@"success");
-        self.loadingImageView.tag = 0;
-        [self.loadingImageView removeFromSuperview];
-        [self.loadingImageView.layer removeAllAnimations];
-        self.loadSuccessView.hidden = NO;
-        
-        double delayInSeconds = 0.7;
-        dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-        dispatch_after(popTime, dispatch_get_main_queue(), ^
-                       {
-                           [self hideLoading];
-                       });
-        
-    }
-}
-
-- (void)hideLoading
-{
-    if(self.loadingView != nil){
-        [self.loadingView removeFromSuperview];
-        [self.loadingImageView removeFromSuperview];
-        [self.loadingImageView.layer removeAllAnimations];
-        self.loadingView = nil;
-        self.loadingImageView = nil;
-        self.animationFinished = YES;
-    }
-}
-
-- (void)showPageLoading
-{
-    if(self.pageLoadingView == nil){
-        int bottomHeight = 0;
-        if([self isKindOfClass:[FriendMomentController class]])
-        {
-            bottomHeight = 49;
-        }
-        self.pageLoadingView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, DEVICE_SIZE.width, DEVICE_SIZE.height - 64 - bottomHeight)];
-        [self.navigationController.view addSubview:self.pageLoadingView];
-        
-        NSMutableArray *array = [[NSMutableArray alloc] initWithObjects:[UIImage imageNamed:@"three_1"],[UIImage imageNamed:@"three_2"],[UIImage imageNamed:@"three_3"], nil];
-        self.pageLoadingImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, DEVICE_SIZE.width/2)];
-        self.pageLoadingImageView.animationImages = array; //动画图片数组
-        self.pageLoadingImageView.animationDuration = 0.8; //执行一次完整动画所需的时长
-        self.pageLoadingImageView.animationRepeatCount = 0;  //动画重复次数 0表示无限次，默认为0
-        
-        UIView *backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, DEVICE_SIZE.height-128 - bottomHeight)];
-        self.pageLoadingImageView.center = backgroundView.center;
-        [backgroundView addSubview:self.pageLoadingImageView];
-        [self.pageLoadingView addSubview:backgroundView];
-        
-        [self.navigationController.view addSubview:self.pageLoadingView];
-    }
-    self.pageLoadingView.hidden = NO;
-    [self.pageLoadingImageView startAnimating];
-    
-}
-
-- (void)hidePageLoading
-{
-    if(self.pageLoadingView != nil){
-        self.pageLoadingView.hidden = YES;
-        [self.pageLoadingImageView stopAnimating];
-    }
-}
-
-- (void)rotateImageView:(UIImageView *)imageView{
-    // 一秒钟旋转几圈
-    CGFloat circleByOneSecond = 4.0f;
-    
-    imageView.tag = 1;
-    
-    // 执行动画
-    [UIView animateWithDuration:1.f / circleByOneSecond
-                          delay:0
-                        options:UIViewAnimationOptionCurveLinear
-                     animations:^{
-                         imageView.transform = CGAffineTransformRotate(imageView.transform, M_PI_2);
-                     }
-                     completion:^(BOOL finished){
-                         if (!_animationFinished) {
-                             if(imageView.tag == 1)
-                                 [self rotateImageView:imageView];
-                         }
-                     }];
-}
-
-- (UIImageView *)rotate360DegreeWithImageView:(UIImageView *)imageView{
-    CABasicAnimation *animation = [CABasicAnimation
-                                   animationWithKeyPath:@"transform"];
-    animation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
-    
-    animation.toValue = [NSValue valueWithCATransform3D:
-                         CATransform3DMakeRotation(M_PI/2.0, 0.0, 0.0, 1.0) ];
-    animation.duration = 0.25;
-    
-    animation.cumulative = YES;
-    animation.repeatCount = MAXFLOAT;
-    
-    [imageView.layer addAnimation:animation forKey:nil];
-    return imageView;
-}
-
-- (void)setUpSuccessHUD{
-    
-    //然后显示一个成功的提示；
-    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
-    successHUD.labelText = Localized(@"success");
-    successHUD.mode = MBProgressHUDModeText;
-    successHUD.removeFromSuperViewOnHide = true;
-    [successHUD hide:true afterDelay:0.5];
-    
-}
-- (void)setUpSuccessHUD :(NSString*)text{
-    
-    //然后显示一个成功的提示；
-    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
-    successHUD.labelText = text;
-    successHUD.mode = MBProgressHUDModeText;
-    successHUD.removeFromSuperViewOnHide = true;
-    [successHUD hide:true afterDelay:0.5];
-}
-- (void)setUpErrorHUD :(NSString*)error {
-    
-    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
-    successHUD.labelText = error;
-    successHUD.mode = MBProgressHUDModeText;
-    successHUD.removeFromSuperViewOnHide = true;
-    [successHUD hide:true afterDelay:0.5];
-}
+//- (void)setUpSuccessHUD{
+//    
+//    //然后显示一个成功的提示；
+//    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+//    successHUD.labelText = Localized(@"success");
+//    successHUD.mode = MBProgressHUDModeText;
+//    successHUD.removeFromSuperViewOnHide = true;
+//    [successHUD hide:true afterDelay:0.5];
+//    
+//}
+//- (void)setUpSuccessHUD :(NSString*)text{
+//    
+//    //然后显示一个成功的提示；
+//    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+//    successHUD.labelText = text;
+//    successHUD.mode = MBProgressHUDModeText;
+//    successHUD.removeFromSuperViewOnHide = true;
+//    [successHUD hide:true afterDelay:0.5];
+//}
+//- (void)setUpErrorHUD :(NSString*)error {
+//    
+//    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+//    successHUD.labelText = error;
+//    successHUD.mode = MBProgressHUDModeText;
+//    successHUD.removeFromSuperViewOnHide = true;
+//    [successHUD hide:true afterDelay:0.5];
+//}
 
 
-- (BOOL)handlerError:(id)error
-{
-    if([error[@"errno"] intValue2] == 1)
-    {
-        [self alert:Localized(@"text_net_error") button:Localized(@"ok") click:nil];
-        return TRUE;
-    }
-    
-    if ([error[@"errno"]intValue2] == 403) {
-        [self alert:Localized(@"err_forbidden") button:Localized(@"ok") click:nil];
-        return TRUE;
-    }
-    
-    if ([error[@"errno"]intValue2] == 401)
-    {
-        [self alert:Localized(@"err_need_login") button:Localized(@"ok") click:^(NSInteger clickIndex) {
-            
-            [AppDelegateInstance doLogout];
-            
-        }];
-        return TRUE;
-    }
-    
-    if ([error[@"errno"]intValue2] == 500)
-    {
-        [self alert:Localized(@"err_server") button:Localized(@"ok") click:nil];
-        [AppDelegateInstance ddError:@"API500"];
-        return TRUE;
-    }
-    
-    return false;
-}
+//- (BOOL)handlerError:(id)error
+//{
+//    if([error[@"errno"] intValue2] == 1)
+//    {
+//        [self alert:Localized(@"text_net_error") button:Localized(@"ok") click:nil];
+//        return TRUE;
+//    }
+//    
+//    if ([error[@"errno"]intValue2] == 403) {
+//        [self alert:Localized(@"err_forbidden") button:Localized(@"ok") click:nil];
+//        return TRUE;
+//    }
+//    
+//    if ([error[@"errno"]intValue2] == 401)
+//    {
+//        [self alert:Localized(@"err_need_login") button:Localized(@"ok") click:^(NSInteger clickIndex) {
+//            
+//            [AppDelegateInstance doLogout];
+//            
+//        }];
+//        return TRUE;
+//    }
+//    
+//    if ([error[@"errno"]intValue2] == 500)
+//    {
+//        [self alert:Localized(@"err_server") button:Localized(@"ok") click:nil];
+//        [AppDelegateInstance ddError:@"API500"];
+//        return TRUE;
+//    }
+//    
+//    return false;
+//}
 
 - (void)backClick {
     

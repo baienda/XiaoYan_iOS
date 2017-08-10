@@ -63,6 +63,22 @@
 		439CF9401F3BFA0E0093BE8B /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF92C1F3BFA0E0093BE8B /* UIView+MJExtension.m */; };
 		439CF9431F3BFA940093BE8B /* XYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF9421F3BFA940093BE8B /* XYLabel.m */; };
 		439CF9461F3BFB710093BE8B /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF9451F3BFB710093BE8B /* WelcomeViewController.m */; };
+		439CF9481F3C0C020093BE8B /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9471F3C0C020093BE8B /* CoreImage.framework */; };
+		439CF94A1F3C0CB40093BE8B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9491F3C0CB40093BE8B /* CoreGraphics.framework */; };
+		439CF94C1F3C0CCE0093BE8B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF94B1F3C0CCE0093BE8B /* MobileCoreServices.framework */; };
+		439CF94E1F3C0CE20093BE8B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF94D1F3C0CE20093BE8B /* Security.framework */; };
+		439CF9501F3C0CF40093BE8B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF94F1F3C0CF40093BE8B /* SystemConfiguration.framework */; };
+		439CF9521F3C0D4B0093BE8B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9511F3C0D4B0093BE8B /* CoreLocation.framework */; };
+		439CF9541F3C0D5B0093BE8B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9531F3C0D5B0093BE8B /* MessageUI.framework */; };
+		439CF9561F3C0DA80093BE8B /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9551F3C0DA80093BE8B /* AddressBookUI.framework */; };
+		439CF9581F3C0DC70093BE8B /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9571F3C0DC70093BE8B /* libiconv.tbd */; };
+		439CF95A1F3C0E0F0093BE8B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9591F3C0E0F0093BE8B /* libsqlite3.tbd */; };
+		439CF95C1F3C0E210093BE8B /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF95B1F3C0E210093BE8B /* libstdc++.6.0.9.tbd */; };
+		439CF95E1F3C0E330093BE8B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF95D1F3C0E330093BE8B /* libz.tbd */; };
+		439CF9601F3C0E3E0093BE8B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF95F1F3C0E3E0093BE8B /* ImageIO.framework */; };
+		439CF9621F3C0E5E0093BE8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9611F3C0E5E0093BE8B /* AVFoundation.framework */; };
+		439CF9641F3C0E860093BE8B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9631F3C0E860093BE8B /* AudioToolbox.framework */; };
+		439CF9661F3C0E920093BE8B /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439CF9651F3C0E920093BE8B /* CoreMedia.framework */; };
 		462B02BEB7326E562CE20924 /* libPods-孝颜.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E435173DE170C4F585A48BDF /* libPods-孝颜.a */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +197,22 @@
 		439CF9421F3BFA940093BE8B /* XYLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYLabel.m; sourceTree = "<group>"; };
 		439CF9441F3BFB710093BE8B /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		439CF9451F3BFB710093BE8B /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		439CF9471F3C0C020093BE8B /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		439CF9491F3C0CB40093BE8B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		439CF94B1F3C0CCE0093BE8B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		439CF94D1F3C0CE20093BE8B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		439CF94F1F3C0CF40093BE8B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		439CF9511F3C0D4B0093BE8B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		439CF9531F3C0D5B0093BE8B /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		439CF9551F3C0DA80093BE8B /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		439CF9571F3C0DC70093BE8B /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		439CF9591F3C0E0F0093BE8B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		439CF95B1F3C0E210093BE8B /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		439CF95D1F3C0E330093BE8B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		439CF95F1F3C0E3E0093BE8B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		439CF9611F3C0E5E0093BE8B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		439CF9631F3C0E860093BE8B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		439CF9651F3C0E920093BE8B /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		643ECEA1C0F0D6B6DD0A1833 /* Pods-孝颜.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-孝颜.debug.xcconfig"; path = "Pods/Target Support Files/Pods-孝颜/Pods-孝颜.debug.xcconfig"; sourceTree = "<group>"; };
 		E435173DE170C4F585A48BDF /* libPods-孝颜.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-孝颜.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C1CCB540FD85C4B839DC81 /* Pods-孝颜.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-孝颜.release.xcconfig"; path = "Pods/Target Support Files/Pods-孝颜/Pods-孝颜.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +223,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439CF9661F3C0E920093BE8B /* CoreMedia.framework in Frameworks */,
+				439CF9641F3C0E860093BE8B /* AudioToolbox.framework in Frameworks */,
+				439CF9621F3C0E5E0093BE8B /* AVFoundation.framework in Frameworks */,
+				439CF9601F3C0E3E0093BE8B /* ImageIO.framework in Frameworks */,
+				439CF95E1F3C0E330093BE8B /* libz.tbd in Frameworks */,
+				439CF95C1F3C0E210093BE8B /* libstdc++.6.0.9.tbd in Frameworks */,
+				439CF95A1F3C0E0F0093BE8B /* libsqlite3.tbd in Frameworks */,
+				439CF9581F3C0DC70093BE8B /* libiconv.tbd in Frameworks */,
+				439CF9561F3C0DA80093BE8B /* AddressBookUI.framework in Frameworks */,
+				439CF9541F3C0D5B0093BE8B /* MessageUI.framework in Frameworks */,
+				439CF9521F3C0D4B0093BE8B /* CoreLocation.framework in Frameworks */,
+				439CF9501F3C0CF40093BE8B /* SystemConfiguration.framework in Frameworks */,
+				439CF94E1F3C0CE20093BE8B /* Security.framework in Frameworks */,
+				439CF94C1F3C0CCE0093BE8B /* MobileCoreServices.framework in Frameworks */,
+				439CF94A1F3C0CB40093BE8B /* CoreGraphics.framework in Frameworks */,
+				439CF9481F3C0C020093BE8B /* CoreImage.framework in Frameworks */,
 				462B02BEB7326E562CE20924 /* libPods-孝颜.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +249,22 @@
 		1B44DAE4AAAD5D6B8102FB61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				439CF9651F3C0E920093BE8B /* CoreMedia.framework */,
+				439CF9631F3C0E860093BE8B /* AudioToolbox.framework */,
+				439CF9611F3C0E5E0093BE8B /* AVFoundation.framework */,
+				439CF95F1F3C0E3E0093BE8B /* ImageIO.framework */,
+				439CF95D1F3C0E330093BE8B /* libz.tbd */,
+				439CF95B1F3C0E210093BE8B /* libstdc++.6.0.9.tbd */,
+				439CF9591F3C0E0F0093BE8B /* libsqlite3.tbd */,
+				439CF9571F3C0DC70093BE8B /* libiconv.tbd */,
+				439CF9551F3C0DA80093BE8B /* AddressBookUI.framework */,
+				439CF9531F3C0D5B0093BE8B /* MessageUI.framework */,
+				439CF9511F3C0D4B0093BE8B /* CoreLocation.framework */,
+				439CF94F1F3C0CF40093BE8B /* SystemConfiguration.framework */,
+				439CF94D1F3C0CE20093BE8B /* Security.framework */,
+				439CF94B1F3C0CCE0093BE8B /* MobileCoreServices.framework */,
+				439CF9491F3C0CB40093BE8B /* CoreGraphics.framework */,
+				439CF9471F3C0C020093BE8B /* CoreImage.framework */,
 				E435173DE170C4F585A48BDF /* libPods-孝颜.a */,
 			);
 			name = Frameworks;

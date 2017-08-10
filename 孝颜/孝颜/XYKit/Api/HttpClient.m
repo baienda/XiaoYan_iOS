@@ -7,14 +7,14 @@
 //
 #import "HttpClient.h"
 
-#import "Meecha-Swift.h"
-#import "UFileAPIUtils.h"
-#import "UFileAPI.h"
+//#import "Meecha-Swift.h"
+//#import "UFileAPIUtils.h"
+//#import "UFileAPI.h"
 #import "UserConfig.h"
 #import "UserDefault.h"
 
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
+//#import <Fabric/Fabric.h>
+//#import <Crashlytics/Crashlytics.h>
 
 static NSString *tempBaseURL;
 
@@ -141,9 +141,9 @@ static NSString *tempBaseURL;
     NSString *ccDevice = [NSString stringWithFormat:@"%@&wifi=%@", ua, wifi];
     [manager.requestSerializer setValue:ccDevice forHTTPHeaderField:@"X-Cc-Device"];
     
-    CCLocation *location = [AppDelegateInstance getLocation];
-    NSString *ccLocation = [NSString stringWithFormat:@"longitude=%@&latitude=%@", location.longitude, location.latitude];
-    [manager.requestSerializer setValue:ccLocation forHTTPHeaderField:@"X-Cc-Location"];
+//    CCLocation *location = [AppDelegateInstance getLocation];
+//    NSString *ccLocation = [NSString stringWithFormat:@"longitude=%@&latitude=%@", location.longitude, location.latitude];
+//    [manager.requestSerializer setValue:ccLocation forHTTPHeaderField:@"X-Cc-Location"];
     
     //取出保存的U和S
     NSString *cookie = [NSString stringWithFormat:@"u=%@; s=%@", [UserConfig getTokenU], [UserConfig getTokenS]];
@@ -159,7 +159,7 @@ static NSString *tempBaseURL;
             success(responseObject, baseUrl);
         } else {
             NSString *eventName = [NSString stringWithFormat:@"API_ERROR_%d", [responseObject[@"errno"]intValue2]];
-            [CrashlyticsKit logEvent:eventName];
+//            [CrashlyticsKit logEvent:eventName];
             
             MyLog(@"Error------------%@", path);
             failure(responseObject, baseUrl);
@@ -168,7 +168,7 @@ static NSString *tempBaseURL;
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
         
-        [CrashlyticsKit recordError:error];
+//        [CrashlyticsKit recordError:error];
         
         if(failure ==nil)return ;
         NSInteger code = 1;
@@ -193,106 +193,106 @@ static NSString *tempBaseURL;
 }
 
 
-+ (void)uploadImage:(UIImage *)image
-               path:(NSString *)path
-             params:(NSDictionary *)params
-           progress:(HttpBaseProgressBlock)progress
-            success:(HttpBaseSuccessBlock)success
-            failure:(HttpBaseFailureBlock)failure
-{
-    MyLog(@"Request: %@", path);
-    [AppDelegateInstance refreshNetworkStatus];
-    
-    //生成随机10位字符串
-    char Namedata[10];
-    for (int x=0;x< 10; Namedata[x++] = (char)('A' + (arc4random_uniform(26))));
-    NSString *key = [[NSString alloc] initWithBytes:Namedata length:10 encoding:NSUTF8StringEncoding];
-    
-    NSString *imgHeight = [NSString stringWithFormat:@"%f",image.size.height];
-    NSString *imgWidth = [NSString stringWithFormat:@"%f",image.size.width];
-    
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"yyyyMMddHHmmss"];
-    NSString *currentDateStr = [df stringFromDate:[NSDate date]];
-    key = [NSString stringWithFormat:@"u_a_%@_%@.jpg",currentDateStr,key];
-    
-    File *imageFile = [[File alloc] initFromKeys:kUcloudPublicKey privateKey:kUcloudPrivateKey bucket:kUcloudBucket];
-    
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.9);
-    
-    NSString *itMd5 = [UFileAPIUtils calcMD5ForData:imageData];
-    NSString *auth = [imageFile calcKeyWithHttpMethod:@"PUT" key:key contentMd5:itMd5 contentType:@"image/jpeg"];
-    //NSString *auth = [imageFile calcKey:@"PUT" key:key contentMd5:itMd5 contentType:@"image/jpeg"];
-    
-    [imageFile.ufileSDK putFile:key authorization:auth option:@{kUFileSDKOptionMD5:itMd5,kUFileSDKOptionFileType:@"image/jpeg"} data:imageData progress:^(NSProgress * _Nonnull progress) {
-        
-    } success:^(NSDictionary * _Nonnull response) {
-        
-        NSMutableDictionary *allparams = [self formatParams:params];
-        
-        [allparams setObject:imgHeight forKey:@"height"];
-        [allparams setObject:imgWidth forKey:@"width"];
-        [allparams setObject:key forKey:@"filename"];
-        
-        [self post:path params:allparams success:^(id JSON, NSString* baseURL) {
-            if (success == nil) return ;
-            success(JSON, baseURL);
-        } failure:^(id error, NSString* baseURL) {
-            if (failure == nil) return ;
-            failure(error, baseURL);
-        }];
-        
-    } failure:^(NSError * _Nonnull error) {
-        NSLog(@"%@",error);
-    }];
-}
-+ (void)uploadUcloudImage:(UIImage *)image
-                   params:(NSDictionary *)params
-                 progress:(HttpBaseProgressBlock)progress
-                  success:(HttpBaseSuccessBlock)success
-                  failure:(HttpBaseFailureBlock)failure {
-    
-    
-    [AppDelegateInstance refreshNetworkStatus];
-    
-    NSString* key = [params objectForKey:@"filename"];
-    
-    File *imageFile = [[File alloc] initFromKeys:kUcloudPublicKey privateKey:kUcloudPrivateKey bucket:kUcloudBucket];
-    
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.9);
-    
-    NSString *itMd5 = [UFileAPIUtils calcMD5ForData:imageData];
-    NSString *auth = [imageFile calcKeyWithHttpMethod:@"PUT" key:key contentMd5:itMd5 contentType:@"image/jpeg"];
-    
-    [imageFile.ufileSDK putFile:key authorization:auth option:@{kUFileSDKOptionMD5:itMd5,kUFileSDKOptionFileType:@"image/jpeg"} data:imageData progress:^(NSProgress * _Nonnull progress) {
-    } success:^(NSDictionary * _Nonnull response) {
-        success(response, nil);
-    } failure:^(NSError * _Nonnull error) {
-        NSLog(@"%@",error);
-    }];
-}
-+ (void)uploadUcloudVideo:(NSString *)localVideoPath
-                   params:(NSDictionary *)params
-                 progress:(HttpBaseProgressBlock)progress
-                  success:(HttpBaseSuccessBlock)success
-                  failure:(HttpBaseFailureBlock)failure {
-    
-    [AppDelegateInstance refreshNetworkStatus];
-    
-    NSString* key = [params objectForKey:@"filename"];
-    
-    File *imageFile = [[File alloc] initFromKeys:kUcloudPublicKey privateKey:kUcloudPrivateKey bucket:kUcloudBucket];
-    
-    NSData *videoData = [NSData dataWithContentsOfFile:localVideoPath];
-    
-    NSString *itMd5 = [UFileAPIUtils calcMD5ForData:videoData];
-    NSString *auth = [imageFile calcKeyWithHttpMethod:@"PUT" key:key contentMd5:itMd5 contentType:@"video/mp4"];
-    
-    [imageFile.ufileSDK putFile:key authorization:auth option:@{kUFileSDKOptionMD5:itMd5,kUFileSDKOptionFileType:@"video/mp4"} data:videoData progress:^(NSProgress * _Nonnull progress) {
-    } success:^(NSDictionary * _Nonnull response) {
-        success(response, nil);
-    } failure:^(NSError * _Nonnull error) {
-        NSLog(@"%@",error);
-    }];
-}
+//+ (void)uploadImage:(UIImage *)image
+//               path:(NSString *)path
+//             params:(NSDictionary *)params
+//           progress:(HttpBaseProgressBlock)progress
+//            success:(HttpBaseSuccessBlock)success
+//            failure:(HttpBaseFailureBlock)failure
+//{
+//    MyLog(@"Request: %@", path);
+//    [AppDelegateInstance refreshNetworkStatus];
+//    
+//    //生成随机10位字符串
+//    char Namedata[10];
+//    for (int x=0;x< 10; Namedata[x++] = (char)('A' + (arc4random_uniform(26))));
+//    NSString *key = [[NSString alloc] initWithBytes:Namedata length:10 encoding:NSUTF8StringEncoding];
+//    
+//    NSString *imgHeight = [NSString stringWithFormat:@"%f",image.size.height];
+//    NSString *imgWidth = [NSString stringWithFormat:@"%f",image.size.width];
+//    
+//    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//    [df setDateFormat:@"yyyyMMddHHmmss"];
+//    NSString *currentDateStr = [df stringFromDate:[NSDate date]];
+//    key = [NSString stringWithFormat:@"u_a_%@_%@.jpg",currentDateStr,key];
+//    
+//    File *imageFile = [[File alloc] initFromKeys:kUcloudPublicKey privateKey:kUcloudPrivateKey bucket:kUcloudBucket];
+//    
+//    NSData *imageData = UIImageJPEGRepresentation(image, 0.9);
+//    
+//    NSString *itMd5 = [UFileAPIUtils calcMD5ForData:imageData];
+//    NSString *auth = [imageFile calcKeyWithHttpMethod:@"PUT" key:key contentMd5:itMd5 contentType:@"image/jpeg"];
+//    //NSString *auth = [imageFile calcKey:@"PUT" key:key contentMd5:itMd5 contentType:@"image/jpeg"];
+//    
+//    [imageFile.ufileSDK putFile:key authorization:auth option:@{kUFileSDKOptionMD5:itMd5,kUFileSDKOptionFileType:@"image/jpeg"} data:imageData progress:^(NSProgress * _Nonnull progress) {
+//        
+//    } success:^(NSDictionary * _Nonnull response) {
+//        
+//        NSMutableDictionary *allparams = [self formatParams:params];
+//        
+//        [allparams setObject:imgHeight forKey:@"height"];
+//        [allparams setObject:imgWidth forKey:@"width"];
+//        [allparams setObject:key forKey:@"filename"];
+//        
+//        [self post:path params:allparams success:^(id JSON, NSString* baseURL) {
+//            if (success == nil) return ;
+//            success(JSON, baseURL);
+//        } failure:^(id error, NSString* baseURL) {
+//            if (failure == nil) return ;
+//            failure(error, baseURL);
+//        }];
+//        
+//    } failure:^(NSError * _Nonnull error) {
+//        NSLog(@"%@",error);
+//    }];
+//}
+//+ (void)uploadUcloudImage:(UIImage *)image
+//                   params:(NSDictionary *)params
+//                 progress:(HttpBaseProgressBlock)progress
+//                  success:(HttpBaseSuccessBlock)success
+//                  failure:(HttpBaseFailureBlock)failure {
+//    
+//    
+//    [AppDelegateInstance refreshNetworkStatus];
+//    
+//    NSString* key = [params objectForKey:@"filename"];
+//    
+//    File *imageFile = [[File alloc] initFromKeys:kUcloudPublicKey privateKey:kUcloudPrivateKey bucket:kUcloudBucket];
+//    
+//    NSData *imageData = UIImageJPEGRepresentation(image, 0.9);
+//    
+//    NSString *itMd5 = [UFileAPIUtils calcMD5ForData:imageData];
+//    NSString *auth = [imageFile calcKeyWithHttpMethod:@"PUT" key:key contentMd5:itMd5 contentType:@"image/jpeg"];
+//    
+//    [imageFile.ufileSDK putFile:key authorization:auth option:@{kUFileSDKOptionMD5:itMd5,kUFileSDKOptionFileType:@"image/jpeg"} data:imageData progress:^(NSProgress * _Nonnull progress) {
+//    } success:^(NSDictionary * _Nonnull response) {
+//        success(response, nil);
+//    } failure:^(NSError * _Nonnull error) {
+//        NSLog(@"%@",error);
+//    }];
+//}
+//+ (void)uploadUcloudVideo:(NSString *)localVideoPath
+//                   params:(NSDictionary *)params
+//                 progress:(HttpBaseProgressBlock)progress
+//                  success:(HttpBaseSuccessBlock)success
+//                  failure:(HttpBaseFailureBlock)failure {
+//    
+//    [AppDelegateInstance refreshNetworkStatus];
+//    
+//    NSString* key = [params objectForKey:@"filename"];
+//    
+//    File *imageFile = [[File alloc] initFromKeys:kUcloudPublicKey privateKey:kUcloudPrivateKey bucket:kUcloudBucket];
+//    
+//    NSData *videoData = [NSData dataWithContentsOfFile:localVideoPath];
+//    
+//    NSString *itMd5 = [UFileAPIUtils calcMD5ForData:videoData];
+//    NSString *auth = [imageFile calcKeyWithHttpMethod:@"PUT" key:key contentMd5:itMd5 contentType:@"video/mp4"];
+//    
+//    [imageFile.ufileSDK putFile:key authorization:auth option:@{kUFileSDKOptionMD5:itMd5,kUFileSDKOptionFileType:@"video/mp4"} data:videoData progress:^(NSProgress * _Nonnull progress) {
+//    } success:^(NSDictionary * _Nonnull response) {
+//        success(response, nil);
+//    } failure:^(NSError * _Nonnull error) {
+//        NSLog(@"%@",error);
+//    }];
+//}
 @end

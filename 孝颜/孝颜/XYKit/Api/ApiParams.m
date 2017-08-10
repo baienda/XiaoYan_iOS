@@ -91,6 +91,7 @@
 @end
 
 @implementation FriendParams
+
 -(NSString *)getSign
 {
     NSString *imei = [AppDelegateInstance getUUid];

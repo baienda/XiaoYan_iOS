@@ -7,7 +7,7 @@
 //
 
 #import "UIView+animation.h"
-#import "ChatAlertView.h"
+//#import "ChatAlertView.h"
 
 @implementation UIView(Animation)
 

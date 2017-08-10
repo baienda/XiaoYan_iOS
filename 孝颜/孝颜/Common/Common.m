@@ -1,6 +1,6 @@
 
 #import "Common.h"
-#import "UIImageView+XHURLDownload.h"
+//#import "UIImageView+XHURLDownload.h"
 
 int iosMajorVersion()
 {
@@ -170,94 +170,94 @@ NSString *EncodeText(NSString *string, int key)
 
 @implementation UIImageView (CCWebImage)
 
-- (void)setWithURL:(NSString *)imageURL placeholder:(UIImage *)placeholder completion:(CCWebImageBlock)block
-{
-    NSURL *url;
-    if([imageURL hasPrefix:@"/"]){
-        url = [NSURL fileURLWithPath:imageURL];
-    } else {
-        url = [NSURL returnUrlFormUTF8String:imageURL];
-    }
-    if(url){
-        /**
-        [self loadWithURL:url placeholer:placeholder showActivityIndicatorView:NO completionBlock:^(UIImage *image, NSURL *url, NSError *error) {
-            if(block != nil){
-                block(image, error);
-            }
-        }];
-        ***/
-        [self setImageWithURL:url placeholder:placeholder options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-            if(block != nil){
-                block(image, error);
-            }
-        }];
-    }
-}
-
-- (void)setAvatarWithURL:(nullable NSString *)imageURL
-{
-    [self setAvatarWithURL:imageURL completion:nil];
-}
-
-- (void)setAvatarWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
-{
-    [self setClipsToBounds:YES];
-    [self setContentMode:UIViewContentModeScaleAspectFill];
-    [self setWithURL:imageURL placeholder:[UIImage imageNamed:@"icon_moren"] completion:block];
-}
-
-- (void)setGroupWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
-{
-    [self setClipsToBounds:YES];
-    [self setContentMode:UIViewContentModeScaleAspectFill];
-    [self setWithURL:imageURL placeholder:[UIImage imageNamed:@"chat_icon_group"] completion:block];
-}
-
-- (void)setThumbnailWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
-{
-    [self setClipsToBounds:YES];
-    [self setContentMode:UIViewContentModeScaleAspectFill];
-    [self setWithURL:imageURL placeholder:[UIImage imageWithColor:UIColorRGB(0xEEEEEE)] completion:block];
-}
-
-- (void)setNoPlaceholderWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
-{
-    [self setClipsToBounds:YES];
-    [self setContentMode:UIViewContentModeScaleAspectFill];
-    [self setWithURL:imageURL placeholder:nil completion:block];
-}
-
-- (void)setMomentWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
-{
-    [self setClipsToBounds:YES];
-    [self setContentMode:UIViewContentModeScaleAspectFill];
-    
-    __weak UIImageView *wself = self;
-    [self setWithURL:imageURL placeholder:[UIImage imageWithColor:kColorRGBSame(238)] completion:^(UIImage *image, NSError *error) {
-        if (!wself) return;
-        if(error != nil){
-            wself.image = [UIImage imageNamed: @"icon_moren"];
-        }
-        if(block != nil){
-            block(image, error);
-        }
-    }];
-}
-- (void)setShakeWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
-{
-    [self setClipsToBounds:YES];
-    [self setContentMode:UIViewContentModeScaleAspectFill];
-    __weak UIImageView *wself = self;
-    [self setWithURL:imageURL placeholder:[UIImage imageNamed:@"shake_quesheng"] completion:^(UIImage *image, NSError *error) {
-        if (!wself) return;
-        if(error != nil){
-            wself.image = [UIImage imageNamed: @"icon_moren"];
-        }
-        if(block != nil){
-            block(image, error);
-        }
-    }];
-}
+//- (void)setWithURL:(NSString *)imageURL placeholder:(UIImage *)placeholder completion:(CCWebImageBlock)block
+//{
+//    NSURL *url;
+//    if([imageURL hasPrefix:@"/"]){
+//        url = [NSURL fileURLWithPath:imageURL];
+//    } else {
+//        url = [NSURL returnUrlFormUTF8String:imageURL];
+//    }
+//    if(url){
+//        /**
+//        [self loadWithURL:url placeholer:placeholder showActivityIndicatorView:NO completionBlock:^(UIImage *image, NSURL *url, NSError *error) {
+//            if(block != nil){
+//                block(image, error);
+//            }
+//        }];
+//        ***/
+//        [self setImageWithURL:url placeholder:placeholder options:YYWebImageOptionProgressiveBlur|YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
+//            if(block != nil){
+//                block(image, error);
+//            }
+//        }];
+//    }
+//}
+//
+//- (void)setAvatarWithURL:(nullable NSString *)imageURL
+//{
+//    [self setAvatarWithURL:imageURL completion:nil];
+//}
+//
+//- (void)setAvatarWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
+//{
+//    [self setClipsToBounds:YES];
+//    [self setContentMode:UIViewContentModeScaleAspectFill];
+//    [self setWithURL:imageURL placeholder:[UIImage imageNamed:@"icon_moren"] completion:block];
+//}
+//
+//- (void)setGroupWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
+//{
+//    [self setClipsToBounds:YES];
+//    [self setContentMode:UIViewContentModeScaleAspectFill];
+//    [self setWithURL:imageURL placeholder:[UIImage imageNamed:@"chat_icon_group"] completion:block];
+//}
+//
+//- (void)setThumbnailWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
+//{
+//    [self setClipsToBounds:YES];
+//    [self setContentMode:UIViewContentModeScaleAspectFill];
+//    [self setWithURL:imageURL placeholder:[UIImage imageWithColor:UIColorRGB(0xEEEEEE)] completion:block];
+//}
+//
+//- (void)setNoPlaceholderWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
+//{
+//    [self setClipsToBounds:YES];
+//    [self setContentMode:UIViewContentModeScaleAspectFill];
+//    [self setWithURL:imageURL placeholder:nil completion:block];
+//}
+//
+//- (void)setMomentWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
+//{
+//    [self setClipsToBounds:YES];
+//    [self setContentMode:UIViewContentModeScaleAspectFill];
+//    
+//    __weak UIImageView *wself = self;
+//    [self setWithURL:imageURL placeholder:[UIImage imageWithColor:kColorRGBSame(238)] completion:^(UIImage *image, NSError *error) {
+//        if (!wself) return;
+//        if(error != nil){
+//            wself.image = [UIImage imageNamed: @"icon_moren"];
+//        }
+//        if(block != nil){
+//            block(image, error);
+//        }
+//    }];
+//}
+//- (void)setShakeWithURL:(nullable NSString *)imageURL completion:(nullable CCWebImageBlock)block
+//{
+//    [self setClipsToBounds:YES];
+//    [self setContentMode:UIViewContentModeScaleAspectFill];
+//    __weak UIImageView *wself = self;
+//    [self setWithURL:imageURL placeholder:[UIImage imageNamed:@"shake_quesheng"] completion:^(UIImage *image, NSError *error) {
+//        if (!wself) return;
+//        if(error != nil){
+//            wself.image = [UIImage imageNamed: @"icon_moren"];
+//        }
+//        if(block != nil){
+//            block(image, error);
+//        }
+//    }];
+//}
 @end
 
 
