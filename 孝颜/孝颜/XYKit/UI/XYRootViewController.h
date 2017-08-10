@@ -6,7 +6,7 @@
 //  Copyright © 2017年 com.baienda. All rights reserved.
 //
 #import "XYViewController.h"
-#import "XYViewController.h"
+#import "XYRootTabsController.h"
 
 #import "CourseViewController.h"
 #import "ActivityViewController.h"

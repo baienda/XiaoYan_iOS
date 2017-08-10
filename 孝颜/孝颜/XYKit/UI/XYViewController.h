@@ -12,12 +12,11 @@
 #import "ApiParams.h"
 #import "ApiClient.h"
 #import "ChatUser.h"
-#import "IMCore.h"
+//#import "IMCore.h"
 #import "UserDefault.h"
 #import "UserConfig.h"
-#import "CCModel.h"
 #import "Common.h"
-#import "IMNotice.h"
+//#import "IMNotice.h"
 
 @protocol NavigationBarAppearance <NSObject>
 
@@ -78,9 +77,9 @@ typedef void(^accountLoadedBlock)();
 - (void)dismissViewController;
 - (void)popViewController;
 
-- (void)alert:(NSString *)message button:(NSString *)button click:(LXAlertClickIndexBlock)click;
-- (void)alertLeft:(NSString *)message button:(NSString *)button click:(LXAlertClickIndexBlock)click;
-- (void)confirm:(NSString *)message button1:(NSString *)button1 button2:(NSString *)button2 click:(LXAlertClickIndexBlock)click;
+//- (void)alert:(NSString *)message button:(NSString *)button click:(LXAlertClickIndexBlock)click;
+//- (void)alertLeft:(NSString *)message button:(NSString *)button click:(LXAlertClickIndexBlock)click;
+//- (void)confirm:(NSString *)message button1:(NSString *)button1 button2:(NSString *)button2 click:(LXAlertClickIndexBlock)click;
 - (void)showLoading :(BOOL)isload;
 - (void)showLoadingSuccss;
 - (void)hideLoading;

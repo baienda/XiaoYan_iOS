@@ -82,7 +82,7 @@ extern AppDelegate *AppDelegateInstance;
 - (NSString *)getLanguage;
 - (NSInteger)getNetworkStatus;
 - (void)refreshNetworkStatus;
-- (CCLocation *)getLocation;
+//- (CCLocation *)getLocation;
 
 @end
 

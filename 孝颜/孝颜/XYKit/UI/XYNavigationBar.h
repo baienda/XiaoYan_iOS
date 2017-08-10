@@ -7,7 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XYNavigationController.h"
+
+typedef enum {
+    WhiteNavigationBarStyle = 0,
+    TransparentNavigationBarStyle = 1
+} NavigationBarStyle;
+
+@class NavigationController;
 
 @interface XYNavigationBar : UINavigationBar
+
+@property (nonatomic, strong) UIView *progressView;
+
+- (id)initWithFrame:(CGRect)frame barStyle:(NavigationBarStyle)barStyle;
+
+- (void)setHiddenState:(bool)hidden animated:(bool)animated;
+
+- (void)setLineColor:(UIColor *)color;
 
 @end
