@@ -71,7 +71,7 @@ extern AppDelegate *AppDelegateInstance;
 - (void)updateLocationTime;
 
 - (void)ddEvent:(NSString *)name;
-- (void)ddError:(NSString *)name;
+//- (void)ddError:(NSString *)name;
 
 + (NSString *)documentsPath;
 

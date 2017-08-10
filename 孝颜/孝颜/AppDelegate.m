@@ -170,10 +170,12 @@ AppDelegate *AppDelegateInstance = nil;
     dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1/*延迟执行时间*/ * NSEC_PER_SEC));
     dispatch_after(delayTime, dispatch_get_main_queue(), ^{
         
-        if([self hasLocationRequested] == TRUE){
-            //初始化APNS
-            [self initAPNS];
-        }
+//        if([self hasLocationRequested] == TRUE){
+//            //初始化APNS
+//            [self initAPNS];
+//        }
+        [self initAPNS];
+
     });
     //获取网络状况
     [self refreshNetworkStatus];
@@ -288,11 +290,11 @@ AppDelegate *AppDelegateInstance = nil;
     
 //    [Emoji instance];
     
-    [self updateLocation];
+//    [self updateLocation];
     
-    if ([AppDelegateInstance isLocationed] == NO) {
-        [self requestLocation];
-    }
+//    if ([AppDelegateInstance isLocationed] == NO) {
+//        [self requestLocation];
+//    }
     
 }
 

@@ -119,8 +119,8 @@
 {
     _viewControllerIsDisappearing = true;
     _viewControllerIsAnimatingAppearanceTransition = true;
-    [self hidePageLoading];
-    [self hideLoading];
+//    [self hidePageLoading];
+//    [self hideLoading];
     [super viewWillDisappear:animated];
 }
 
@@ -584,6 +584,42 @@
 //    }
 //    
 //    return false;
+//}
+
+//- (void)loadAcountInfo:(accountLoadedBlock)block
+//{
+//    
+//    [ApiClient getAccountSuccess:^(id JSON) {
+//        
+//        MyLog(@"%@",JSON);
+//        id data = JSON[@"data"];
+//        
+//        int notifCount = [data[@"cnts"][@"notif"] intValue2];
+//        
+//        [UserConfig setUid:[data[@"uid"] intValue2]];
+//        [UserConfig setChatId:[data[@"chat_id"] intValue2]];
+//        [UserConfig setNickname:data[@"nickname"]];
+//        [UserConfig setGender:[data[@"gender"] intValue2]];
+//        [UserConfig setAvatar:data[@"avatar"]];
+//        
+//        [UserConfig setCanLogin:[data[@"permissions"][@"login"] boolValue]];
+//        [UserConfig setCanPostPhoto:[data[@"permissions"][@"photo"] boolValue]];
+//        [UserConfig setCanPostMessage:[data[@"permissions"][@"message"] boolValue]];
+//        [UserConfig setCanPostNote:[data[@"permissions"][@"note"] boolValue]];
+//        [UserConfig setCanPostComment:[data[@"permissions"][@"comment"] boolValue]];
+//        [UserConfig setCanSayHi:[data[@"permissions"][@"sayhi"] boolValue]];
+//        [UserConfig setHasFace:[data[@"avatar_has_face"] boolValue]];
+//        [UserConfig setNotif:notifCount];
+//        [UserConfig setIsLock:[data[@"permissions"][@"is_lock"] boolValue]];
+//        [UserConfig setStar:[data[@"star"] intValue2]];
+//        [UserConfig setHideLocation:[data[@"self_hide"] boolValue]];
+//        
+//        if(block){
+//            block();
+//        }
+//        
+//    } andFailure:^(id error) {
+//    }];
 //}
 
 - (void)backClick {
