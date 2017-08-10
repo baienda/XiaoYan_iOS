@@ -41,8 +41,10 @@
 
 #define kBuleColor kColor(0, 158, 255)
 #define kBuleHighlightColor kColor(0, 126, 204)
-
 #define kRedColor kColor(255, 0, 0)
+#define kWhiteColor kColor(255, 255, 255)
+#define kBlackColor kColor(0, 0, 0)
+
 
 #define kTitleColor UIColorRGB(0x242427)//标题和名字
 #define kTextColor UIColorRGB(0x494951)//正文
@@ -66,6 +68,9 @@
 #define UIColorRGBA(rgb,a) ([[UIColor alloc] initWithRed:(((rgb >> 16) & 0xff) / 255.0f) green:(((rgb >> 8) & 0xff) / 255.0f) blue:(((rgb) & 0xff) / 255.0f) alpha:a])
 
 #define checkStringNull(Str) (Str) == [NSNull null] || (Str) == nil ? @”” : [NSString stringWithFormat:@”%@”, (Str)]
+
+//全局弱饮用
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
 
 //系统默认字体
