@@ -1,5 +1,5 @@
 //
-//  CourseViewController.h
+//  SelectCityController.h
 //  孝颜
 //
 //  Created by benjamin on 2017/8/10.
@@ -8,10 +8,6 @@
 
 #import "XYViewController.h"
 
-#import "HotCourseCell.h"
-
-@interface CourseViewController : XYViewController
-
-- (void) refresh;
+@interface SelectCityController : XYViewController
 
 @end

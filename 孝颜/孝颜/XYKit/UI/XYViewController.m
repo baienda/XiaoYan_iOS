@@ -223,7 +223,7 @@
 {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.bounds = CGRectMake(0, 0, 44, 44);
-    [btn setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    [btn setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
     btn.contentEdgeInsets = UIEdgeInsetsMake(0, -20, 0, 0);
     [btn addTarget:self action:action forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];

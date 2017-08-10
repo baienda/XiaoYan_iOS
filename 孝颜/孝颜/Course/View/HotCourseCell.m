@@ -13,7 +13,8 @@ static CGFloat kTopMargin = 10;
 static CGFloat kPhotoWidth = 80;
 static CGFloat KPhotoHeight = 60;
 static CGFloat kTimeWidth = 100;
-
+static CGFloat KJoinWidth = 60;
+static CGFloat kJoinHeight = 20;
 
 @interface HotCourseCell ()
 {
@@ -98,7 +99,10 @@ static CGFloat kTimeWidth = 100;
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     WS(weakself);
+    
     [_photoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(weakself.wrapView.mas_left).mas_offset(kLeadingMargin);
         make.top.mas_equalTo(weakself.wrapView.mas_top).mas_offset(kTopMargin);
@@ -120,8 +124,15 @@ static CGFloat kTimeWidth = 100;
     
     [_subTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(weakself.photoView.mas_right).mas_offset(kLeadingMargin);
-        make.bottom.mas_equalTo(weakself.timeView.mas_top).mas_offset(5);
+        make.bottom.mas_equalTo(weakself.timeView.mas_top).mas_offset(-5);
         make.width.mas_equalTo(kTimeWidth* autoLayoutX);
+    }];
+    
+    [_joinView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.mas_equalTo(weakself.wrapView.mas_right).mas_offset(-kLeadingMargin);
+        make.bottom.mas_equalTo(weakself.wrapView.mas_bottom).mas_equalTo(-kTopMargin);
+        make.width.mas_equalTo(KJoinWidth* autoLayoutX);
+        make.height.mas_equalTo(kJoinHeight* autoLayoutY);
     }];
 }
 - (void)prepareForReuse
@@ -140,7 +151,7 @@ static CGFloat kTimeWidth = 100;
 }
 - (void)setTitle:(NSString *)title {
     
-    _timeView.text = title;
+    _titleView.text = title;
 
 }
 - (void)setSubTitle:(NSString*)subTitle {
@@ -157,7 +168,7 @@ static CGFloat kTimeWidth = 100;
     if (join) {
         [_joinView setTitle:Localized(@"正在报名") forState:UIControlStateNormal];
         [_joinView setTitleColor:kGlobalColor forState:UIControlStateNormal];
-        [_joinView addTarget:self action:@selector(editMindAction) forControlEvents:UIControlEventTouchUpInside];
+        [_joinView addTarget:self action:@selector(joinClick) forControlEvents:UIControlEventTouchUpInside];
 
     }else {
         [_joinView setTitle:Localized(@"报名截止") forState:UIControlStateNormal];

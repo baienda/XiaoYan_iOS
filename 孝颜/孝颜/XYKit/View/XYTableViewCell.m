@@ -7,6 +7,7 @@
 //
 
 #import "XYTableViewCell.h"
+#import "Common.h"
 
 @implementation XYTableViewCell
 
