@@ -7,13 +7,14 @@
 //
 
 #import "MineViewController.h"
+#import "MineProfileController.h"
 
 #import "MineBaseCell.h"
 
 #import "FTPopOverMenu.h"
 
 
-@interface MineViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface MineViewController ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
 
 @property(nonatomic, strong)UITableView     *tableView;
 @property(nonatomic, strong)UIImageView     *headerBackView;//头像背景图片
@@ -89,6 +90,10 @@
     _photoImageView.layer.cornerRadius = 50;
     _photoImageView.layer.masksToBounds = YES;
     [_photoImageView setThumbnailWithURL:@"https://n.sinaimg.cn/news/transform/20170807/E6wL-fyitamv6457474.jpg" completion:nil];
+    _photoImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer* singleIconRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(signalIconTap)];
+    [_photoImageView addGestureRecognizer:singleIconRecognizer];
+
     
     // 用户名
     _userNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_photoImageView.frame) + 10, DEVICE_SIZE.width, 20)];
@@ -108,6 +113,12 @@
     [_tableViewHeaderView addSubview:_introduceLabel];
     
     self.tableView.tableHeaderView = _tableViewHeaderView;
+}
+
+- (void)signalIconTap {
+    
+    MineProfileController* profile = [[MineProfileController alloc] init];
+    [self pushViewController:profile animated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

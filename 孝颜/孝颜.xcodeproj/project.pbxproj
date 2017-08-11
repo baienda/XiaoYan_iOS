@@ -22,6 +22,9 @@
 		4308DB021F3D7B2200EE0E73 /* VideoTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB011F3D7B2200EE0E73 /* VideoTypeCell.m */; };
 		4308DB061F3D89D800EE0E73 /* FTPopOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB051F3D89D800EE0E73 /* FTPopOverMenu.m */; };
 		4308DB091F3D931B00EE0E73 /* MineBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB081F3D931B00EE0E73 /* MineBaseCell.m */; };
+		4308DB0C1F3DBC0200EE0E73 /* MineProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB0B1F3DBC0200EE0E73 /* MineProfileController.m */; };
+		4308DB101F3DBCEA00EE0E73 /* MineProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB0E1F3DBCEA00EE0E73 /* MineProfileCell.m */; };
+		4308DB111F3DBCEA00EE0E73 /* MineProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4308DB0F1F3DBCEA00EE0E73 /* MineProfileCell.xib */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -211,6 +214,11 @@
 		4308DB051F3D89D800EE0E73 /* FTPopOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPopOverMenu.m; sourceTree = "<group>"; };
 		4308DB071F3D931B00EE0E73 /* MineBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineBaseCell.h; sourceTree = "<group>"; };
 		4308DB081F3D931B00EE0E73 /* MineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineBaseCell.m; sourceTree = "<group>"; };
+		4308DB0A1F3DBC0200EE0E73 /* MineProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineProfileController.h; sourceTree = "<group>"; };
+		4308DB0B1F3DBC0200EE0E73 /* MineProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineProfileController.m; sourceTree = "<group>"; };
+		4308DB0D1F3DBCEA00EE0E73 /* MineProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineProfileCell.h; sourceTree = "<group>"; };
+		4308DB0E1F3DBCEA00EE0E73 /* MineProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineProfileCell.m; sourceTree = "<group>"; };
+		4308DB0F1F3DBCEA00EE0E73 /* MineProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineProfileCell.xib; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -874,6 +882,8 @@
 			children = (
 				439CF8B61F3BE6490093BE8B /* MineViewController.h */,
 				439CF8B71F3BE6490093BE8B /* MineViewController.m */,
+				4308DB0A1F3DBC0200EE0E73 /* MineProfileController.h */,
+				4308DB0B1F3DBC0200EE0E73 /* MineProfileController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -897,6 +907,9 @@
 			children = (
 				4308DB071F3D931B00EE0E73 /* MineBaseCell.h */,
 				4308DB081F3D931B00EE0E73 /* MineBaseCell.m */,
+				4308DB0D1F3DBCEA00EE0E73 /* MineProfileCell.h */,
+				4308DB0E1F3DBCEA00EE0E73 /* MineProfileCell.m */,
+				4308DB0F1F3DBCEA00EE0E73 /* MineProfileCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1509,6 +1522,7 @@
 				4308DAF61F3D615C00EE0E73 /* VideoHotTypeCell.xib in Resources */,
 				439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */,
 				439CF93B1F3BFA0E0093BE8B /* MJRefresh.bundle in Resources */,
+				4308DB111F3DBCEA00EE0E73 /* MineProfileCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1637,6 +1651,7 @@
 				439CFA511F3C3DA30093BE8B /* YYMemoryCache.m in Sources */,
 				439CF93E1F3BFA0E0093BE8B /* UIScrollView+MJExtension.m in Sources */,
 				439CFA601F3C3DA30093BE8B /* NSObject+YYModel.m in Sources */,
+				4308DB101F3DBCEA00EE0E73 /* MineProfileCell.m in Sources */,
 				4308DAE71F3C6D5000EE0E73 /* SelectCityCell.m in Sources */,
 				439CF8F81F3BEA800093BE8B /* Hacks.m in Sources */,
 				439CFA301F3C3DA30093BE8B /* NSArray+YYAdd.m in Sources */,
@@ -1703,6 +1718,7 @@
 				439CF9331F3BFA0E0093BE8B /* MJRefreshAutoNormalFooter.m in Sources */,
 				439CFA621F3C3DA30093BE8B /* YYTextContainerView.m in Sources */,
 				4308DAFC1F3D689A00EE0E73 /* VideoTypeController.m in Sources */,
+				4308DB0C1F3DBC0200EE0E73 /* MineProfileController.m in Sources */,
 				439CF8F51F3BEA800093BE8B /* ColorImageTool.m in Sources */,
 				439CFA5A1F3C3DA30093BE8B /* YYImageCache.m in Sources */,
 				439CF8A31F3BE21A0093BE8B /* ApiClient.m in Sources */,
