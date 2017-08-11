@@ -15,7 +15,7 @@
     
     self.title.font = kFontBold(16* autoLayoutY);
     self.maskView.userInteractionEnabled = NO;
-    self.maskView.backgroundColor = kGlobalColor;
+    self.maskView.backgroundColor = kBlackColor;
     self.maskView.alpha = 0.4;
     
 }

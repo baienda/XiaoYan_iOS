@@ -157,7 +157,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     HotCourseCell *hotCell = [HotCourseCell cell:tableView];
-    [hotCell setImage:@""];
+    [hotCell setImage:@"https://n.sinaimg.cn/news/20170808/u1kQ-fyitapv9390785.jpg"];
     [hotCell setTitle:Localized(@"儿童创意功课")];
     [hotCell setSubTitle:Localized(@"孝颜总部")];
     [hotCell setTime:Localized(@"05月28日-05月28日")];

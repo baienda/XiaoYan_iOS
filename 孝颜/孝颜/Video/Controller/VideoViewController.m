@@ -8,6 +8,8 @@
 
 #import "VideoViewController.h"
 #import "VideoTypeController.h"
+#import "VideoTypeDetailController.h"
+
 #import "VideoHotTypeCell.h"
 #import "VideoHotTypeHeaderView.h"
 
@@ -85,8 +87,11 @@
     
     scroller.items = firstArray;
     scroller.autoScroll = YES;
+#pragma mark - 轮播图点击回调 -
     [scroller didSelectJKScrollFocusItem:^(id item,NSInteger index) {
         NSLog(@"click %ld,item:%@",index,item);
+        VideoTypeDetailController* detailVC = [[VideoTypeDetailController alloc] init];
+        [self pushViewController:detailVC animated:YES];
     }];
     [scroller downloadJKScrollFocusItem:^(id item, UIImageView *currentImageView) {
         VideoNewsModel *n = item;
@@ -101,7 +106,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     VideoHotTypeCell *cell=(VideoHotTypeCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"VideoHotTypeCell" forIndexPath:indexPath];
-    [cell.photo setThumbnailWithURL:@"" completion:nil];
+    [cell.photo setThumbnailWithURL:@"https://n.sinaimg.cn/news/20170808/u1kQ-fyitapv9390785.jpg" completion:nil];
     cell.title.text = @"#社区活动";
     return cell;
 }

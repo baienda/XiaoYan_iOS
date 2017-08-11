@@ -111,7 +111,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     ActivityCell *activityCell = [ActivityCell cell:tableView];
-    [activityCell setImage:@""];
+    [activityCell setImage:@"https://n.sinaimg.cn/news/20170808/u1kQ-fyitapv9390785.jpg"];
     [activityCell setTitle:Localized(@"孝亲敬老（石家营）")];
     [activityCell setSubTitleAndTime:Localized(@"石家营村委会 | 08月05日 15:30")];
     [activityCell setJoinTitle:NO];

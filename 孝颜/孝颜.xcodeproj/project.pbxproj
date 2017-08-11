@@ -19,6 +19,7 @@
 		4308DAF91F3D666E00EE0E73 /* VideoHotTypeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAF81F3D666E00EE0E73 /* VideoHotTypeHeaderView.m */; };
 		4308DAFC1F3D689A00EE0E73 /* VideoTypeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAFB1F3D689A00EE0E73 /* VideoTypeController.m */; };
 		4308DAFF1F3D68B400EE0E73 /* VideoTypeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAFE1F3D68B400EE0E73 /* VideoTypeDetailController.m */; };
+		4308DB021F3D7B2200EE0E73 /* VideoTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB011F3D7B2200EE0E73 /* VideoTypeCell.m */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -202,6 +203,8 @@
 		4308DAFB1F3D689A00EE0E73 /* VideoTypeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTypeController.m; sourceTree = "<group>"; };
 		4308DAFD1F3D68B400EE0E73 /* VideoTypeDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTypeDetailController.h; sourceTree = "<group>"; };
 		4308DAFE1F3D68B400EE0E73 /* VideoTypeDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTypeDetailController.m; sourceTree = "<group>"; };
+		4308DB001F3D7B2200EE0E73 /* VideoTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTypeCell.h; sourceTree = "<group>"; };
+		4308DB011F3D7B2200EE0E73 /* VideoTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTypeCell.m; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -928,6 +931,8 @@
 				4308DAF41F3D615C00EE0E73 /* VideoHotTypeCell.xib */,
 				4308DAF71F3D666E00EE0E73 /* VideoHotTypeHeaderView.h */,
 				4308DAF81F3D666E00EE0E73 /* VideoHotTypeHeaderView.m */,
+				4308DB001F3D7B2200EE0E73 /* VideoTypeCell.h */,
+				4308DB011F3D7B2200EE0E73 /* VideoTypeCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1639,6 +1644,7 @@
 				439CFA541F3C3DA30093BE8B /* MKAnnotationView+YYWebImage.m in Sources */,
 				439CFA641F3C3DA30093BE8B /* YYTextEffectWindow.m in Sources */,
 				439CFA441F3C3DA30093BE8B /* UIControl+YYAdd.m in Sources */,
+				4308DB021F3D7B2200EE0E73 /* VideoTypeCell.m in Sources */,
 				439CFA591F3C3DA30093BE8B /* YYImage.m in Sources */,
 				439CFA3F1F3C3DA30093BE8B /* YYCGUtilities.m in Sources */,
 				439CFA821F3C3DA30093BE8B /* YYWeakProxy.m in Sources */,
