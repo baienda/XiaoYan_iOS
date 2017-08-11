@@ -12,6 +12,8 @@
 		4308DAE11F3C5D0C00EE0E73 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAE01F3C5D0C00EE0E73 /* ActivityCell.m */; };
 		4308DAE41F3C64CF00EE0E73 /* ActivityDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAE31F3C64CF00EE0E73 /* ActivityDetailsController.m */; };
 		4308DAE71F3C6D5000EE0E73 /* SelectCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAE61F3C6D5000EE0E73 /* SelectCityCell.m */; };
+		4308DAEB1F3D4EBE00EE0E73 /* JKScrollFocus.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAEA1F3D4EBE00EE0E73 /* JKScrollFocus.m */; };
+		4308DAEE1F3D502400EE0E73 /* VideoNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAED1F3D502400EE0E73 /* VideoNewsModel.m */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -182,6 +184,10 @@
 		4308DAE31F3C64CF00EE0E73 /* ActivityDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailsController.m; sourceTree = "<group>"; };
 		4308DAE51F3C6D5000EE0E73 /* SelectCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityCell.h; sourceTree = "<group>"; };
 		4308DAE61F3C6D5000EE0E73 /* SelectCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityCell.m; sourceTree = "<group>"; };
+		4308DAE91F3D4EBE00EE0E73 /* JKScrollFocus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKScrollFocus.h; sourceTree = "<group>"; };
+		4308DAEA1F3D4EBE00EE0E73 /* JKScrollFocus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKScrollFocus.m; sourceTree = "<group>"; };
+		4308DAEC1F3D502400EE0E73 /* VideoNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoNewsModel.h; sourceTree = "<group>"; };
+		4308DAED1F3D502400EE0E73 /* VideoNewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoNewsModel.m; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -539,6 +545,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4308DAE81F3D4EBE00EE0E73 /* JKScrollFocus */ = {
+			isa = PBXGroup;
+			children = (
+				4308DAE91F3D4EBE00EE0E73 /* JKScrollFocus.h */,
+				4308DAEA1F3D4EBE00EE0E73 /* JKScrollFocus.m */,
+			);
+			path = JKScrollFocus;
+			sourceTree = "<group>";
+		};
 		439CF8521F3B1B1F0093BE8B = {
 			isa = PBXGroup;
 			children = (
@@ -764,6 +779,7 @@
 			children = (
 				439CF97A1F3C3DA30093BE8B /* YYKit */,
 				439CF8FE1F3BFA0E0093BE8B /* MJRefresh */,
+				4308DAE81F3D4EBE00EE0E73 /* JKScrollFocus */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -873,6 +889,8 @@
 		439CF8941F3BE02B0093BE8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4308DAEC1F3D502400EE0E73 /* VideoNewsModel.h */,
+				4308DAED1F3D502400EE0E73 /* VideoNewsModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1550,6 +1568,7 @@
 				439CFA791F3C3DA30093BE8B /* YYFileHash.m in Sources */,
 				439CF9361F3BFA0E0093BE8B /* MJRefreshBackNormalFooter.m in Sources */,
 				439CF93A1F3BFA0E0093BE8B /* MJRefreshStateHeader.m in Sources */,
+				4308DAEE1F3D502400EE0E73 /* VideoNewsModel.m in Sources */,
 				439CF92E1F3BFA0E0093BE8B /* MJRefreshBackFooter.m in Sources */,
 				439CFA481F3C3DA30093BE8B /* UIImage+YYAdd.m in Sources */,
 				439CFA321F3C3DA30093BE8B /* NSData+YYAdd.m in Sources */,
@@ -1637,6 +1656,7 @@
 				439CFA3E1F3C3DA30093BE8B /* CALayer+YYAdd.m in Sources */,
 				439CFA331F3C3DA30093BE8B /* NSDate+YYAdd.m in Sources */,
 				439CF93D1F3BFA0E0093BE8B /* NSBundle+MJRefresh.m in Sources */,
+				4308DAEB1F3D4EBE00EE0E73 /* JKScrollFocus.m in Sources */,
 				439CFA7B1F3C3DA30093BE8B /* YYKeychain.m in Sources */,
 				439CFA4A1F3C3DA30093BE8B /* UIScrollView+YYAdd.m in Sources */,
 				439CF8F91F3BEA800093BE8B /* SoundTool.m in Sources */,
