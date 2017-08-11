@@ -20,6 +20,8 @@
 		4308DAFC1F3D689A00EE0E73 /* VideoTypeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAFB1F3D689A00EE0E73 /* VideoTypeController.m */; };
 		4308DAFF1F3D68B400EE0E73 /* VideoTypeDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAFE1F3D68B400EE0E73 /* VideoTypeDetailController.m */; };
 		4308DB021F3D7B2200EE0E73 /* VideoTypeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB011F3D7B2200EE0E73 /* VideoTypeCell.m */; };
+		4308DB061F3D89D800EE0E73 /* FTPopOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB051F3D89D800EE0E73 /* FTPopOverMenu.m */; };
+		4308DB091F3D931B00EE0E73 /* MineBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB081F3D931B00EE0E73 /* MineBaseCell.m */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -205,6 +207,10 @@
 		4308DAFE1F3D68B400EE0E73 /* VideoTypeDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTypeDetailController.m; sourceTree = "<group>"; };
 		4308DB001F3D7B2200EE0E73 /* VideoTypeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTypeCell.h; sourceTree = "<group>"; };
 		4308DB011F3D7B2200EE0E73 /* VideoTypeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTypeCell.m; sourceTree = "<group>"; };
+		4308DB041F3D89D800EE0E73 /* FTPopOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPopOverMenu.h; sourceTree = "<group>"; };
+		4308DB051F3D89D800EE0E73 /* FTPopOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPopOverMenu.m; sourceTree = "<group>"; };
+		4308DB071F3D931B00EE0E73 /* MineBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineBaseCell.h; sourceTree = "<group>"; };
+		4308DB081F3D931B00EE0E73 /* MineBaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineBaseCell.m; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -571,6 +577,15 @@
 			path = JKScrollFocus;
 			sourceTree = "<group>";
 		};
+		4308DB031F3D89D800EE0E73 /* FTPopOverMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4308DB041F3D89D800EE0E73 /* FTPopOverMenu.h */,
+				4308DB051F3D89D800EE0E73 /* FTPopOverMenu.m */,
+			);
+			path = FTPopOverMenu;
+			sourceTree = "<group>";
+		};
 		439CF8521F3B1B1F0093BE8B = {
 			isa = PBXGroup;
 			children = (
@@ -794,6 +809,7 @@
 		439CF8871F3BE02B0093BE8B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4308DB031F3D89D800EE0E73 /* FTPopOverMenu */,
 				439CF97A1F3C3DA30093BE8B /* YYKit */,
 				439CF8FE1F3BFA0E0093BE8B /* MJRefresh */,
 				4308DAE81F3D4EBE00EE0E73 /* JKScrollFocus */,
@@ -879,6 +895,8 @@
 		439CF8911F3BE02B0093BE8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4308DB071F3D931B00EE0E73 /* MineBaseCell.h */,
+				4308DB081F3D931B00EE0E73 /* MineBaseCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1595,6 +1613,7 @@
 				439CFA5F1F3C3DA30093BE8B /* UIImageView+XHURLDownload.m in Sources */,
 				439CF8CD1F3BE91C0093BE8B /* UserConfig.m in Sources */,
 				439CFA791F3C3DA30093BE8B /* YYFileHash.m in Sources */,
+				4308DB091F3D931B00EE0E73 /* MineBaseCell.m in Sources */,
 				439CF9361F3BFA0E0093BE8B /* MJRefreshBackNormalFooter.m in Sources */,
 				439CF93A1F3BFA0E0093BE8B /* MJRefreshStateHeader.m in Sources */,
 				4308DAEE1F3D502400EE0E73 /* VideoNewsModel.m in Sources */,
@@ -1623,6 +1642,7 @@
 				439CFA301F3C3DA30093BE8B /* NSArray+YYAdd.m in Sources */,
 				439CFA521F3C3DA30093BE8B /* _YYWebImageSetter.m in Sources */,
 				439CFA561F3C3DA30093BE8B /* UIImageView+YYWebImage.m in Sources */,
+				4308DB061F3D89D800EE0E73 /* FTPopOverMenu.m in Sources */,
 				439CF8E01F3BEA670093BE8B /* NSString+Array.m in Sources */,
 				4308DAF91F3D666E00EE0E73 /* VideoHotTypeHeaderView.m in Sources */,
 				439CFA401F3C3DA30093BE8B /* UIApplication+YYAdd.m in Sources */,
