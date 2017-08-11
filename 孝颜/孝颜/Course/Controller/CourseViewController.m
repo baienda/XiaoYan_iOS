@@ -70,6 +70,7 @@
 
 }
 -(void)viewWillAppear:(BOOL)animated {
+    
     [super viewWillAppear:animated];
     
 }
@@ -101,8 +102,8 @@
 - (void)cityBtnAction {
     
     SelectCityController* selectVC = [[SelectCityController alloc] init];
-    
-    [self presentViewController:selectVC animated:YES];
+    XYNavigationController *navigation = [XYNavigationController navigationControllerWithControllers:@[selectVC]];
+    [self presentViewController:navigation animated:YES];
 }
 - (void)addTableView
 {

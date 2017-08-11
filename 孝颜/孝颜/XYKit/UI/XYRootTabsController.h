@@ -27,7 +27,7 @@
 @property (nonatomic, strong) UIImageView* videoIcon;
 @property (nonatomic, strong) UIImageView* videoIconCircle;
 @property (nonatomic, assign) BOOL videoAnimating;//动画正在执行
-- (void)videoIconClick;
+//- (void)videoIconClick;
 
 @end
 

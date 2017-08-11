@@ -33,6 +33,10 @@
     [self addTableView];
     
 }
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+}
 - (void)setNavigationBar
 {
     [self setTitleText:Localized(@"课程")];
@@ -49,7 +53,7 @@
 }
 - (void)dissmissBtnAction {
     
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewController];
 }
 - (void)addTableView
 {
@@ -129,6 +133,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewController];
 }
 @end

@@ -8,6 +8,7 @@
 
 #import "ActivityViewController.h"
 #import "ActivityDetailsController.h"
+#import "SelectCityController.h"
 
 #import "ActivityCell.h"
 
@@ -42,7 +43,21 @@
 - (void)setNavigationBar{
     
     [self setTitleText: Localized(@"活动")];
+    UIButton *cityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    cityBtn.bounds = CGRectMake(0, 0, 29, 29);
+    [cityBtn setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+    [cityBtn setTitleColor:kGlobalColor forState:UIControlStateNormal];
+    cityBtn.titleLabel.font = kFont(14* autoLayoutY);
+    [cityBtn addTarget:self action:@selector(cityBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    cityBtn.tag = 510002;
+    UIBarButtonItem *cityItem = [[UIBarButtonItem alloc] initWithCustomView:cityBtn];
+    [self setLeftBarButtonItem:cityItem];
+}
+- (void)cityBtnAction {
     
+    SelectCityController* selectVC = [[SelectCityController alloc] init];
+    XYNavigationController *navigation = [XYNavigationController navigationControllerWithControllers:@[selectVC]];
+    [self presentViewController:navigation animated:YES];
 }
 - (void)addTableView
 {
