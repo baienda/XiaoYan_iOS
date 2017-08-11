@@ -7,15 +7,18 @@
 //
 
 #import "VideoViewController.h"
+#import "VideoTypeController.h"
+#import "VideoHotTypeCell.h"
+#import "VideoHotTypeHeaderView.h"
 
 #import "VideoNewsModel.h"
 
 #import "JKScrollFocus.h"
 
+@interface VideoViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
 
-
-@interface VideoViewController ()
-
+@property (nonatomic, strong)UICollectionView *collectionView;
+@property (nonatomic, strong)JKScrollFocus *scroller;
 @end
 
 @implementation VideoViewController
@@ -24,19 +27,46 @@
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
     [self setNavigationBar];
+    //添加网格视图
+    [self setCollectionView];
     //轮播
-    [self setJKScrollFocus];
+//    [self setJKScrollFocus];
 }
 - (void)setNavigationBar{
     
     [self setTitleText: Localized(@"视频")];
 }
-- (void)setJKScrollFocus {
+- (void)setCollectionView {
     
-    JKScrollFocus *scroller = [[JKScrollFocus alloc] initWithFrame:CGRectMake(0, 64, DEVICE_SIZE.width, 200)];
-    //imageArray 也可以传入网络图片地址数组
-    //这里我使用SDWebImage进行加载网络图片,可以使用自己的方法
+    UICollectionViewFlowLayout * flowLayout = [[UICollectionViewFlowLayout alloc] init];
     
+    CGFloat itemWidth =(DEVICE_SIZE.width- 3)/2;
+    CGFloat itemHeight = (DEVICE_SIZE.width- 3)/2;
+    flowLayout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    flowLayout.minimumLineSpacing = 3.0f;
+    flowLayout.minimumInteritemSpacing = 0.0f;
+    flowLayout.scrollDirection=UICollectionViewScrollDirectionVertical;
+    
+    self.collectionView.backgroundColor = kBuleColor;
+    self.collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64, DEVICE_SIZE.width, DEVICE_SIZE.height - 64) collectionViewLayout:flowLayout];
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.scrollEnabled = YES;
+    [self.collectionView registerNib:[UINib nibWithNibName:@"VideoHotTypeCell" bundle:nil] forCellWithReuseIdentifier:@"VideoHotTypeCell"];
+    [self.collectionView registerClass:[VideoHotTypeHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"VideoHotTypeHeaderView"];
+    
+    [self.view addSubview:self.collectionView];
+    
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(initVidepData)];
+    header.automaticallyChangeAlpha = YES;
+    header.lastUpdatedTimeLabel.hidden = YES;
+    header.stateLabel.hidden = YES;
+    self.collectionView.mj_header = header;
+}
+- (void)setJKScrollFocus{
+    
+    JKScrollFocus* scroller = [[JKScrollFocus alloc] initWithFrame:CGRectMake(0, 0, DEVICE_SIZE.width, 200* autoLayoutY)];
     NSMutableArray *firstArray = [NSMutableArray array];
     NSArray *imageAray = @[@"https://n.sinaimg.cn/news/transform/20170810/YtpF-fyixiar9015795.jpg",
                            @"https://n.sinaimg.cn/news/transform/20170810/ifsv-fyixhyw6769798.jpg",
@@ -66,7 +96,49 @@
         VideoNewsModel *n = item;
         return n.title;
     }];
-    [self.view addSubview:scroller];
+    self.scroller = scroller;
 }
-
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    VideoHotTypeCell *cell=(VideoHotTypeCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"VideoHotTypeCell" forIndexPath:indexPath];
+    [cell.photo setThumbnailWithURL:@"" completion:nil];
+    cell.title.text = @"#社区活动";
+    return cell;
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    VideoHotTypeCell *cell = (VideoHotTypeCell *)[self collectionView:collectionView cellForItemAtIndexPath:indexPath];
+    //执行动画
+//    [cell setAni];
+    
+    VideoTypeController* typeVC = [[VideoTypeController alloc] init];
+    [self pushViewController:typeVC animated:YES];
+    
+}
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionReusableView *reusableView =nil;
+    
+    if (kind ==UICollectionElementKindSectionHeader) {
+        //定制头部视图的内容
+        VideoHotTypeHeaderView *headerV = (VideoHotTypeHeaderView *)[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"VideoHotTypeHeaderView"forIndexPath:indexPath];
+        [self setJKScrollFocus];
+        [headerV addSubview:self.scroller];
+        reusableView = headerV;
+    }
+    return reusableView;
+}
+-(CGSize)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    CGSize headerSize = CGSizeMake(DEVICE_SIZE.width, 200* autoLayoutY + 40* autoLayoutY);
+    return headerSize;
+}
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 14;
+}
 @end
