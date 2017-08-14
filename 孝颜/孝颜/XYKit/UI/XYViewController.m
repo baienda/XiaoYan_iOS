@@ -626,4 +626,58 @@
     
     [self popViewController];
 }
+
+- (void)setCustomFinishNavBar :(NSString*)title rightBtn :(UIButton*)rightBtn rightTitle:(NSString*)rightTitle{
+        
+    UIView *container = [[UIView alloc] init];
+    container.frame = CGRectMake(0, 0, DEVICE_SIZE.width, 64);
+    container.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:container];
+    
+    UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [cancelBtn setImage:[UIImage imageNamed:@"1"] forState:UIControlStateNormal];
+    cancelBtn.frame = CGRectMake(15, 5 + 20, 29, 29);
+    [cancelBtn addTarget:self action:@selector(backClick) forControlEvents:UIControlEventTouchUpInside];
+    [container addSubview:cancelBtn];
+    
+    
+    UILabel *titleLable = [[UILabel alloc] init];
+    titleLable.frame = CGRectMake((DEVICE_SIZE.width - 150 * autoLayoutX)/2.0, 20, 150 * autoLayoutX, kHeaderViewHeight);
+    titleLable.textAlignment = NSTextAlignmentCenter;
+    titleLable.textColor = kTitleColor;
+    titleLable.font = kHeaderTitleFont;
+    titleLable.text =  title;
+    [container addSubview:titleLable];
+    
+    UIView *line = [[UIView alloc] init];
+    line.backgroundColor = UIColorRGB(0xE5E5E5);
+    line.frame = CGRectMake(0, 64 - 0.5, DEVICE_SIZE.width, 0.5);
+    [container addSubview:line];
+    
+    [rightBtn setTitle:rightTitle forState:UIControlStateNormal];
+    [rightBtn setTitleColor:kGlobalColor forState:UIControlStateNormal];
+    [rightBtn setTitleColor:UIColorRGBA(0xFF237D, 0.36) forState:UIControlStateDisabled];
+    [rightBtn setTitleColor:kGlobalHighlightColor forState:UIControlStateHighlighted];
+    [rightBtn sizeToFit];
+    rightBtn.enabled = YES;
+    rightBtn.titleLabel.font = kFontBold(18 * autoLayoutX);
+    rightBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
+    rightBtn.frame = CGRectMake((DEVICE_SIZE.width + 150 * autoLayoutX)/2.0, 20 + 5, DEVICE_SIZE.width - (DEVICE_SIZE.width + 150 * autoLayoutX)/2.0 - 15, 34);
+    [container addSubview:rightBtn];
+}
+-(BOOL) isEmpty:(NSString *) str {
+    
+    if (!str) {
+        return true;
+    } else {
+        NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+        NSString *trimedString = [str stringByTrimmingCharactersInSet:set];
+        
+        if ([trimedString length] == 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 @end

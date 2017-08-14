@@ -7,21 +7,40 @@
 //
 
 #import "MineProfileController.h"
+#import "NicknameController.h"
+#import "RealNameController.h"
 
 #import "MineProfileCell.h"
 
-@interface MineProfileController ()<UITableViewDataSource, UITableViewDelegate>
+@interface MineProfileController ()<UITableViewDataSource, UITableViewDelegate,UIActionSheetDelegate>
 
 @property(nonatomic, strong)UITableView *tableView;
+
+@property (nonatomic, strong) NSDictionary* infoDict;
+
+@property (nonatomic, copy) NSString* nickName;
+@property (nonatomic, copy) NSString* pushNickName;
+@property (nonatomic, copy) NSString* realName;
+@property (nonatomic, copy) NSString* pushRealName;
 
 @end
 
 @implementation MineProfileController
 
+- (NSDictionary *)infoDict
+{
+    if (!_infoDict) {
+        _infoDict = [NSDictionary dictionary];
+    }
+    return _infoDict;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kTableViewBackgroundColor;
     [self setNavigationBar];
+    //测试
+    self.nickName = @"大力出奇迹";
+    self.realName = @"苗天宇";
     [self addTableView];
 }
 - (void)setNavigationBar{
@@ -33,6 +52,45 @@
 - (void)backAction {
     
     [self popViewController];
+}
+- (void)initNickNameData {
+    
+    MyLog(@"上传到服务器");
+//    ProfileParams* params = [ProfileParams alloc];
+//    params.nickname = self.nickName;
+//    [ApiClient upDateProfileSuccess:^(id JSON) {
+//        
+//        MyLog(@"%@",JSON);
+//        
+//        [self setUpSuccessHUD];
+//        
+//#pragma mark - 通知MineBaseVC刷新UI
+//        NSNotification * notice = [NSNotification notificationWithName:@"mineBaseInitDataNotice" object:nil userInfo:nil];
+//        //发送消息
+//        [[NSNotificationCenter defaultCenter]postNotification:notice];
+//        
+//        //保存nick到本地
+//        NSString* avatar = [[NSUserDefaults standardUserDefaults]objectForKey:kUserDefaultsEMExtKey][@"avatar"];
+//        NSDictionary* newDict = [NSDictionary dictionaryWithObjectsAndKeys:avatar,@"avatar",self.nickName,@"nickname",nil];
+//        [[NSUserDefaults standardUserDefaults] setObject:newDict forKey:kUserDefaultsEMExtKey];
+//        
+//#pragma mark - 通知localMineVC刷新UI
+//        NSNotification * notice2 = [NSNotification notificationWithName:@"localMineInitDataNotice" object:nil userInfo:nil];
+//        //发送消息
+//        [[NSNotificationCenter defaultCenter]postNotification:notice2];
+//        
+//#pragma mark - 通知LocalVC刷新UI
+//        NSNotification * notice3 = [NSNotification notificationWithName:@"nearbyInitDataNotice" object:nil userInfo:nil];
+//        //发送消息
+//        [[NSNotificationCenter defaultCenter]postNotification:notice3];
+//        
+//        //首页下拉刷新逻辑
+//        [[NSUserDefaults standardUserDefaults]setObject:@(YES) forKey:kUserDefaultsRefreshStatus];
+//        [[NSUserDefaults standardUserDefaults]synchronize];
+//        
+//    } andFailure:^(id error) {
+//        if([self handlerError:error] == FALSE){}
+//    } andParams:params];
 }
 - (void)addTableView
 {
@@ -94,6 +152,13 @@
         cell.downLine.hidden = NO;
         cell.iconView.hidden = YES;
         cell.subTitleTrailing.constant = 40;
+        //昵称逻辑判断
+        if (self.nickName == nil || self.nickName == NULL) {
+            cell.subTitleView.text = self.infoDict[@"nickname"];
+        }else {
+            cell.subTitleView.text = self.nickName;
+        }
+        self.pushNickName = cell.subTitleView.text;
         return cell;
     }
     if (indexPath.row == 2) {
@@ -107,6 +172,13 @@
         cell.downLine.hidden = NO;
         cell.iconView.hidden = YES;
         cell.subTitleTrailing.constant = 40;
+        //姓名逻辑判断
+        if (self.realName == nil || self.realName == NULL) {
+            cell.subTitleView.text = self.infoDict[@"realname"];
+        }else {
+            cell.subTitleView.text = self.realName;
+        }
+        self.pushRealName = cell.subTitleView.text;
         return cell;
     }
     if (indexPath.row == 3) {
@@ -124,6 +196,7 @@
     }
     if (indexPath.row == 4) {
         MineProfileCell *cell = [MineProfileCell cell:tableView];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.titleView.text = Localized(@"孝颜账号");
         cell.subTitleView.text = @"17610996693";
         cell.subTitleView.hidden = NO;
@@ -153,30 +226,28 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //    if (indexPath.section == 0) {
-    //        if (indexPath.row == 0) {
-    //
-    //        }
-    //        if (indexPath.row == 1) {
-    //
-    //        }
-    //    }
-    //    if (indexPath.section == 1) {
-    //        if (indexPath.row == 0) {
-    //
-    //        }
-    //        if (indexPath.row == 1) {
-    //
-    //        }
-    //        if (indexPath.row == 2) {
-    //
-    //        }
-    //    }
-    //    if (indexPath.section == 2) {
-    //        if (indexPath.row == 0) {
-    //
-    //        }
-    //    }
+    
+    if (indexPath.row == 0) {
+        //修改头像
+        [self actionSheetAction];
+    }
+    if (indexPath.row == 1) {
+        //昵称
+        [self nicknameAction];
+    }
+    if (indexPath.row == 2) {
+        //真实姓名
+        [self realnameAction];
+    }
+    if (indexPath.row == 3) {
+        //社区
+        [self communityAction];
+    }
+    if (indexPath.row == 5) {
+        //二维码
+        [self erCodeAction];
+    }
+    
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
@@ -185,5 +256,59 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     
     return 8.0f;
+}
+#pragma mark - Action
+- (void)actionSheetAction {
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"修改头像" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从手机相册选择",nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;//默认风格，灰色背景，白色文字
+    [actionSheet showInView:self.view];
+}
+- (void)nicknameAction {
+    
+    NicknameController* nickVC = [[NicknameController alloc] init];
+    WS(weakSelf);
+    nickVC.SelectArrBlock = ^(NSString *text){
+        MyLog(@"%@",text);
+        weakSelf.nickName = text;
+        [weakSelf.tableView reloadData];
+//        [weakSelf initNickNameData];
+    };
+    nickVC.mineNicknameTextfield.text = [NSString stringWithFormat:@"%@",self.pushNickName];
+    
+    [self pushViewController:nickVC animated:YES];
+
+}
+- (void)realnameAction {
+    
+    RealNameController* nameVC = [[RealNameController alloc] init];
+    WS(weakSelf);
+    nameVC.SelectArrBlock = ^(NSString *text){
+        MyLog(@"%@",text);
+        weakSelf.realName = text;
+        [weakSelf.tableView reloadData];
+//        [weakSelf initNickNameData];
+    };
+    nameVC.mineRealnameTextfield.text = [NSString stringWithFormat:@"%@",self.pushRealName];
+    
+    [self pushViewController:nameVC animated:YES];
+}
+- (void)communityAction {
+    
+    
+}
+- (void)erCodeAction {
+    
+    
+}
+#pragma mark - UIActionSheetDelegate
+//根据被点击的按钮做出反应，0对应destructiveButton，之后的button依次排序
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        //拍照
+    }
+    else if (buttonIndex == 2) {
+        //相册
+    }
 }
 @end

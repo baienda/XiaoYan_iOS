@@ -92,4 +92,8 @@ typedef void(^accountLoadedBlock)();
 
 - (BOOL)handlerError:(id)error;
 
+//设置界面右边导航样式
+- (void)setCustomFinishNavBar :(NSString*)title rightBtn :(UIButton*)rightBtn rightTitle:(NSString*)rightTitle;
+//判断输入框为空
+-(BOOL) isEmpty:(NSString *) str;
 @end
