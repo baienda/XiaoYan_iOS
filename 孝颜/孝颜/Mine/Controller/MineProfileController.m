@@ -9,6 +9,8 @@
 #import "MineProfileController.h"
 #import "NicknameController.h"
 #import "RealNameController.h"
+#import "SelectCommunityController.h"
+#import "MineERCodeController.h"
 
 #import "MineProfileCell.h"
 
@@ -295,11 +297,19 @@
 }
 - (void)communityAction {
     
-    
+    SelectCommunityController* commVC = [[SelectCommunityController alloc] init];
+    WS(weakSelf);
+    commVC.SelectArrBlock = ^(NSString *text){
+        MyLog(@"%@",text);
+        //将回调值赋给模型数组，刷新tableView
+        [weakSelf.tableView reloadData];
+    };
+    [self pushViewController:commVC animated:YES];
 }
 - (void)erCodeAction {
     
-    
+    MineERCodeController* erVC = [[MineERCodeController alloc] init];
+    [self pushViewController:erVC animated:YES];
 }
 #pragma mark - UIActionSheetDelegate
 //根据被点击的按钮做出反应，0对应destructiveButton，之后的button依次排序

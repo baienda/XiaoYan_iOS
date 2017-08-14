@@ -10,4 +10,6 @@
 
 @interface SelectCommunityController : XYViewController
 
+@property (nonatomic ,copy) void (^SelectArrBlock)(NSString *text);
+
 @end

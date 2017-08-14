@@ -34,6 +34,7 @@
 		4308DB2A1F414C6600EE0E73 /* RealNameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB291F414C6600EE0E73 /* RealNameController.m */; };
 		4308DB2D1F414C9D00EE0E73 /* SelectCommunityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB2C1F414C9D00EE0E73 /* SelectCommunityController.m */; };
 		4308DB301F414CCC00EE0E73 /* MineERCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB2F1F414CCC00EE0E73 /* MineERCodeController.m */; };
+		4308DB331F41650500EE0E73 /* CommunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB321F41650500EE0E73 /* CommunityCell.m */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -246,6 +247,8 @@
 		4308DB2C1F414C9D00EE0E73 /* SelectCommunityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCommunityController.m; sourceTree = "<group>"; };
 		4308DB2E1F414CCC00EE0E73 /* MineERCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineERCodeController.h; sourceTree = "<group>"; };
 		4308DB2F1F414CCC00EE0E73 /* MineERCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineERCodeController.m; sourceTree = "<group>"; };
+		4308DB311F41650500EE0E73 /* CommunityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommunityCell.h; sourceTree = "<group>"; };
+		4308DB321F41650500EE0E73 /* CommunityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommunityCell.m; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -666,6 +669,8 @@
 				4308DB0D1F3DBCEA00EE0E73 /* MineProfileCell.h */,
 				4308DB0E1F3DBCEA00EE0E73 /* MineProfileCell.m */,
 				4308DB0F1F3DBCEA00EE0E73 /* MineProfileCell.xib */,
+				4308DB311F41650500EE0E73 /* CommunityCell.h */,
+				4308DB321F41650500EE0E73 /* CommunityCell.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -1684,6 +1689,7 @@
 				439CF93C1F3BFA0E0093BE8B /* MJRefreshConst.m in Sources */,
 				439CF8601F3B1B200093BE8B /* main.m in Sources */,
 				439CFA761F3C3DA30093BE8B /* UIView+draggable.m in Sources */,
+				4308DB331F41650500EE0E73 /* CommunityCell.m in Sources */,
 				439CF8C41F3BE8710093BE8B /* XYNavigationBar.m in Sources */,
 				439CFA451F3C3DA30093BE8B /* UIDevice+YYAdd.m in Sources */,
 				439CF8B81F3BE6490093BE8B /* MineViewController.m in Sources */,
