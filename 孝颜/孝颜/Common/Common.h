@@ -213,7 +213,7 @@ typedef enum{
 #define kSectionInstence 44
 #define kMargin 10
 
-#define kTableViewBackgroundColor kColor(255, 255, 255)
+#define kTableViewBackgroundColor kColor(247, 247, 247)
 
 
 

@@ -8,6 +8,7 @@
 
 #import "MineViewController.h"
 #import "MineProfileController.h"
+#import "SettingRemindController.h"
 
 #import "MineBaseCell.h"
 
@@ -284,7 +285,8 @@
 }
 - (void)setRemind{
     
-    
+    SettingRemindController* set = [[SettingRemindController alloc] init];
+    [self pushViewController:set animated:YES];
 }
 - (void)setPassword{
  

@@ -25,6 +25,11 @@
 		4308DB0C1F3DBC0200EE0E73 /* MineProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB0B1F3DBC0200EE0E73 /* MineProfileController.m */; };
 		4308DB101F3DBCEA00EE0E73 /* MineProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB0E1F3DBCEA00EE0E73 /* MineProfileCell.m */; };
 		4308DB111F3DBCEA00EE0E73 /* MineProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4308DB0F1F3DBCEA00EE0E73 /* MineProfileCell.xib */; };
+		4308DB141F412EF600EE0E73 /* SettingRemindController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB131F412EF500EE0E73 /* SettingRemindController.m */; };
+		4308DB171F41307100EE0E73 /* SettingPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB161F41307100EE0E73 /* SettingPasswordController.m */; };
+		4308DB1A1F41323D00EE0E73 /* SettingTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB191F41323D00EE0E73 /* SettingTextCell.m */; };
+		4308DB1D1F41325000EE0E73 /* SettingSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB1C1F41325000EE0E73 /* SettingSwitchCell.m */; };
+		4308DB201F413EAD00EE0E73 /* IMNotice.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DB1F1F413EAD00EE0E73 /* IMNotice.m */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -219,6 +224,16 @@
 		4308DB0D1F3DBCEA00EE0E73 /* MineProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineProfileCell.h; sourceTree = "<group>"; };
 		4308DB0E1F3DBCEA00EE0E73 /* MineProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineProfileCell.m; sourceTree = "<group>"; };
 		4308DB0F1F3DBCEA00EE0E73 /* MineProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineProfileCell.xib; sourceTree = "<group>"; };
+		4308DB121F412EF500EE0E73 /* SettingRemindController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingRemindController.h; sourceTree = "<group>"; };
+		4308DB131F412EF500EE0E73 /* SettingRemindController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingRemindController.m; sourceTree = "<group>"; };
+		4308DB151F41307100EE0E73 /* SettingPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingPasswordController.h; sourceTree = "<group>"; };
+		4308DB161F41307100EE0E73 /* SettingPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingPasswordController.m; sourceTree = "<group>"; };
+		4308DB181F41323D00EE0E73 /* SettingTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTextCell.h; sourceTree = "<group>"; };
+		4308DB191F41323D00EE0E73 /* SettingTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTextCell.m; sourceTree = "<group>"; };
+		4308DB1B1F41325000EE0E73 /* SettingSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingSwitchCell.h; sourceTree = "<group>"; };
+		4308DB1C1F41325000EE0E73 /* SettingSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingSwitchCell.m; sourceTree = "<group>"; };
+		4308DB1E1F413EAD00EE0E73 /* IMNotice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMNotice.h; sourceTree = "<group>"; };
+		4308DB1F1F413EAD00EE0E73 /* IMNotice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMNotice.m; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -884,6 +899,10 @@
 				439CF8B71F3BE6490093BE8B /* MineViewController.m */,
 				4308DB0A1F3DBC0200EE0E73 /* MineProfileController.h */,
 				4308DB0B1F3DBC0200EE0E73 /* MineProfileController.m */,
+				4308DB121F412EF500EE0E73 /* SettingRemindController.h */,
+				4308DB131F412EF500EE0E73 /* SettingRemindController.m */,
+				4308DB151F41307100EE0E73 /* SettingPasswordController.h */,
+				4308DB161F41307100EE0E73 /* SettingPasswordController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -910,6 +929,10 @@
 				4308DB0D1F3DBCEA00EE0E73 /* MineProfileCell.h */,
 				4308DB0E1F3DBCEA00EE0E73 /* MineProfileCell.m */,
 				4308DB0F1F3DBCEA00EE0E73 /* MineProfileCell.xib */,
+				4308DB181F41323D00EE0E73 /* SettingTextCell.h */,
+				4308DB191F41323D00EE0E73 /* SettingTextCell.m */,
+				4308DB1B1F41325000EE0E73 /* SettingSwitchCell.h */,
+				4308DB1C1F41325000EE0E73 /* SettingSwitchCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1001,6 +1024,8 @@
 		439CF8991F3BE02B0093BE8B /* IM */ = {
 			isa = PBXGroup;
 			children = (
+				4308DB1E1F413EAD00EE0E73 /* IMNotice.h */,
+				4308DB1F1F413EAD00EE0E73 /* IMNotice.m */,
 			);
 			path = IM;
 			sourceTree = "<group>";
@@ -1586,6 +1611,7 @@
 				439CFA811F3C3DA30093BE8B /* YYTransaction.m in Sources */,
 				439CFA7F1F3C3DA30093BE8B /* YYThreadSafeDictionary.m in Sources */,
 				439CFA701F3C3DA30093BE8B /* YYTextParser.m in Sources */,
+				4308DB141F412EF600EE0E73 /* SettingRemindController.m in Sources */,
 				439CFA4F1F3C3DA30093BE8B /* YYDiskCache.m in Sources */,
 				439CFA7C1F3C3DA30093BE8B /* YYReachability.m in Sources */,
 				439CF8B51F3BE63B0093BE8B /* VideoViewController.m in Sources */,
@@ -1608,6 +1634,7 @@
 				439CFA451F3C3DA30093BE8B /* UIDevice+YYAdd.m in Sources */,
 				439CF8B81F3BE6490093BE8B /* MineViewController.m in Sources */,
 				439CF8E21F3BEA670093BE8B /* UIButton+CCButton.m in Sources */,
+				4308DB1D1F41325000EE0E73 /* SettingSwitchCell.m in Sources */,
 				439CF8CA1F3BE8FA0093BE8B /* ChatUser.m in Sources */,
 				439CF9401F3BFA0E0093BE8B /* UIView+MJExtension.m in Sources */,
 				439CFA531F3C3DA30093BE8B /* CALayer+YYWebImage.m in Sources */,
@@ -1627,6 +1654,7 @@
 				439CFA5F1F3C3DA30093BE8B /* UIImageView+XHURLDownload.m in Sources */,
 				439CF8CD1F3BE91C0093BE8B /* UserConfig.m in Sources */,
 				439CFA791F3C3DA30093BE8B /* YYFileHash.m in Sources */,
+				4308DB1A1F41323D00EE0E73 /* SettingTextCell.m in Sources */,
 				4308DB091F3D931B00EE0E73 /* MineBaseCell.m in Sources */,
 				439CF9361F3BFA0E0093BE8B /* MJRefreshBackNormalFooter.m in Sources */,
 				439CF93A1F3BFA0E0093BE8B /* MJRefreshStateHeader.m in Sources */,
@@ -1661,6 +1689,7 @@
 				439CF8E01F3BEA670093BE8B /* NSString+Array.m in Sources */,
 				4308DAF91F3D666E00EE0E73 /* VideoHotTypeHeaderView.m in Sources */,
 				439CFA401F3C3DA30093BE8B /* UIApplication+YYAdd.m in Sources */,
+				4308DB171F41307100EE0E73 /* SettingPasswordController.m in Sources */,
 				439CFA681F3C3DA30093BE8B /* YYTextLine.m in Sources */,
 				439CF8E31F3BEA670093BE8B /* UIButton+ImageTitleSpacing.m in Sources */,
 				439CF8A61F3BE2D40093BE8B /* HttpClient.m in Sources */,
@@ -1714,6 +1743,7 @@
 				439CF9461F3BFB710093BE8B /* WelcomeViewController.m in Sources */,
 				439CFA7A1F3C3DA30093BE8B /* YYGestureRecognizer.m in Sources */,
 				439CFA751F3C3DA30093BE8B /* YYTextView.m in Sources */,
+				4308DB201F413EAD00EE0E73 /* IMNotice.m in Sources */,
 				439CF8E41F3BEA670093BE8B /* UIImage+Add.m in Sources */,
 				439CF9331F3BFA0E0093BE8B /* MJRefreshAutoNormalFooter.m in Sources */,
 				439CFA621F3C3DA30093BE8B /* YYTextContainerView.m in Sources */,
