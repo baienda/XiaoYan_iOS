@@ -9,6 +9,7 @@
 #import "MineViewController.h"
 #import "MineProfileController.h"
 #import "SettingRemindController.h"
+#import "SettingPasswordController.h"
 
 #import "MineBaseCell.h"
 
@@ -290,7 +291,8 @@
 }
 - (void)setPassword{
  
-    
+    SettingPasswordController* setPwd = [[SettingPasswordController alloc] init];
+    [self pushViewController:setPwd animated:YES];
 }
 - (void)setShare{
     

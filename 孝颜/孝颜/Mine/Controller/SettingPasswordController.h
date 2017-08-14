@@ -10,4 +10,9 @@
 
 @interface SettingPasswordController : XYViewController
 
+@property (nonatomic , strong) UITextField* pwdTextfield;
+@property (nonatomic , strong) UITextField* againPwdTextfield;
+
+@property (nonatomic , strong) UIButton * finishBtn;
+
 @end
