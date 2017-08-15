@@ -29,6 +29,8 @@
 
 @property (nonatomic, strong) MBProgressHUD *hud;
 
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
+
 @end
 
 @implementation XYViewController
@@ -525,7 +527,19 @@
 //    [imageView.layer addAnimation:animation forKey:nil];
 //    return imageView;
 //}
-
+- (void)showCustonPageLoading {
+    
+    self.activityIndicatorView=[[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0,0,50,50)];
+    self.activityIndicatorView.center=self.view.center;
+    [self.activityIndicatorView setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleGray];
+    [self.view addSubview:self.activityIndicatorView];
+    [self.activityIndicatorView startAnimating];
+}
+- (void)hideCustonPageLoading {
+    
+    [self.activityIndicatorView stopAnimating];
+    
+}
 - (void)showCustonLoading {
     
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];

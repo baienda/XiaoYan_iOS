@@ -44,6 +44,7 @@
 #define kRedColor kColor(255, 0, 0)
 #define kWhiteColor kColor(255, 255, 255)
 #define kBlackColor kColor(0, 0, 0)
+#define kClearColor [UIColor clearColor]
 
 
 #define kTitleColor UIColorRGB(0x242427)//标题和名字

@@ -69,6 +69,11 @@ static CGFloat kTextFieldH = 56;
 //        [self hideCustonLoading];
 //    });
     //测试页面Loading
+    [self showCustonPageLoading];
+    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3/*延迟执行时间*/ * NSEC_PER_SEC));
+    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+        [self hideCustonPageLoading];
+    });
     
     
 
