@@ -7,6 +7,10 @@
 //
 
 #import "ChatAddressController.h"
+#import "NewFriendController.h"
+#import "AddFriendController.h"
+#import "ChatGroupController.h"
+#import "ChatViewController.h"
 
 #import "BaseContactCell.h"
 
@@ -152,6 +156,25 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            
+            NewFriendController* newVC = [[NewFriendController alloc] init];
+            [self pushViewController:newVC animated:YES];
+        }
+        if (indexPath.row == 1) {
+            
+            AddFriendController* addVC = [[AddFriendController alloc] init];
+            [self pushViewController:addVC animated:YES];
+
+        }
+        if (indexPath.row == 2) {
+            ChatGroupController* groupVC = [[ChatGroupController alloc] init];
+            [self pushViewController:groupVC animated:YES];
+        }
+    }else {
+        ChatViewController* chatVC = [[ChatViewController alloc] init];
+        [self pushViewController:chatVC animated:YES];
+    }
 }
 @end

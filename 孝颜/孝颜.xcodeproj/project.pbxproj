@@ -76,6 +76,10 @@
 		4308DC0F1F42C75700EE0E73 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC051F42C75700EE0E73 /* JSONValueTransformer.m */; };
 		4308DC121F42C89200EE0E73 /* BaseContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC111F42C89200EE0E73 /* BaseContactCell.m */; };
 		4308DC151F42C8C400EE0E73 /* NewContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC141F42C8C400EE0E73 /* NewContactCell.m */; };
+		4308DC181F42DD4A00EE0E73 /* NewFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC171F42DD4A00EE0E73 /* NewFriendController.m */; };
+		4308DC1B1F42DD6700EE0E73 /* AddFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC1A1F42DD6700EE0E73 /* AddFriendController.m */; };
+		4308DC1E1F42DD7C00EE0E73 /* ChatGroupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC1D1F42DD7C00EE0E73 /* ChatGroupController.m */; };
+		4308DC211F42E30C00EE0E73 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC201F42E30C00EE0E73 /* ChatViewController.m */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -362,6 +366,14 @@
 		4308DC111F42C89200EE0E73 /* BaseContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseContactCell.m; sourceTree = "<group>"; };
 		4308DC131F42C8C400EE0E73 /* NewContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewContactCell.h; sourceTree = "<group>"; };
 		4308DC141F42C8C400EE0E73 /* NewContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewContactCell.m; sourceTree = "<group>"; };
+		4308DC161F42DD4A00EE0E73 /* NewFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewFriendController.h; sourceTree = "<group>"; };
+		4308DC171F42DD4A00EE0E73 /* NewFriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewFriendController.m; sourceTree = "<group>"; };
+		4308DC191F42DD6700EE0E73 /* AddFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendController.h; sourceTree = "<group>"; };
+		4308DC1A1F42DD6700EE0E73 /* AddFriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendController.m; sourceTree = "<group>"; };
+		4308DC1C1F42DD7C00EE0E73 /* ChatGroupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatGroupController.h; sourceTree = "<group>"; };
+		4308DC1D1F42DD7C00EE0E73 /* ChatGroupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatGroupController.m; sourceTree = "<group>"; };
+		4308DC1F1F42E30C00EE0E73 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		4308DC201F42E30C00EE0E73 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -1106,6 +1118,8 @@
 			children = (
 				4308DBCC1F42932D00EE0E73 /* ChatBaseController.h */,
 				4308DBCD1F42932D00EE0E73 /* ChatBaseController.m */,
+				4308DC1F1F42E30C00EE0E73 /* ChatViewController.h */,
+				4308DC201F42E30C00EE0E73 /* ChatViewController.m */,
 				4308DBCF1F42959100EE0E73 /* DialogListController.h */,
 				4308DBD01F42959100EE0E73 /* DialogListController.m */,
 				4308DBD21F4295E300EE0E73 /* ChatAddressController.h */,
@@ -1114,6 +1128,12 @@
 				4308DBD61F429B8500EE0E73 /* DetailInfoController.m */,
 				4308DBE01F42A08200EE0E73 /* ERCodeController.h */,
 				4308DBE11F42A08200EE0E73 /* ERCodeController.m */,
+				4308DC161F42DD4A00EE0E73 /* NewFriendController.h */,
+				4308DC171F42DD4A00EE0E73 /* NewFriendController.m */,
+				4308DC191F42DD6700EE0E73 /* AddFriendController.h */,
+				4308DC1A1F42DD6700EE0E73 /* AddFriendController.m */,
+				4308DC1C1F42DD7C00EE0E73 /* ChatGroupController.h */,
+				4308DC1D1F42DD7C00EE0E73 /* ChatGroupController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2031,6 +2051,7 @@
 				439CF8601F3B1B200093BE8B /* main.m in Sources */,
 				439CFA761F3C3DA30093BE8B /* UIView+draggable.m in Sources */,
 				4308DB331F41650500EE0E73 /* CommunityCell.m in Sources */,
+				4308DC211F42E30C00EE0E73 /* ChatViewController.m in Sources */,
 				439CF8C41F3BE8710093BE8B /* XYNavigationBar.m in Sources */,
 				439CFA451F3C3DA30093BE8B /* UIDevice+YYAdd.m in Sources */,
 				439CF8B81F3BE6490093BE8B /* MineViewController.m in Sources */,
@@ -2055,6 +2076,7 @@
 				4308DC0E1F42C75700EE0E73 /* JSONKeyMapper.m in Sources */,
 				4308DBD71F429B8500EE0E73 /* DetailInfoController.m in Sources */,
 				439CFA5F1F3C3DA30093BE8B /* UIImageView+XHURLDownload.m in Sources */,
+				4308DC181F42DD4A00EE0E73 /* NewFriendController.m in Sources */,
 				439CF8CD1F3BE91C0093BE8B /* UserConfig.m in Sources */,
 				439CFA791F3C3DA30093BE8B /* YYFileHash.m in Sources */,
 				4308DB1A1F41323D00EE0E73 /* SettingTextCell.m in Sources */,
@@ -2097,6 +2119,7 @@
 				439CF8E01F3BEA670093BE8B /* NSString+Array.m in Sources */,
 				4308DC081F42C75700EE0E73 /* JSONModelClassProperty.m in Sources */,
 				4308DAF91F3D666E00EE0E73 /* VideoHotTypeHeaderView.m in Sources */,
+				4308DC1E1F42DD7C00EE0E73 /* ChatGroupController.m in Sources */,
 				439CFA401F3C3DA30093BE8B /* UIApplication+YYAdd.m in Sources */,
 				4308DB171F41307100EE0E73 /* SettingPasswordController.m in Sources */,
 				439CFA681F3C3DA30093BE8B /* YYTextLine.m in Sources */,
@@ -2130,6 +2153,7 @@
 				439CFA821F3C3DA30093BE8B /* YYWeakProxy.m in Sources */,
 				4308DAFF1F3D68B400EE0E73 /* VideoTypeDetailController.m in Sources */,
 				439CF9321F3BFA0E0093BE8B /* MJRefreshAutoGifFooter.m in Sources */,
+				4308DC1B1F42DD6700EE0E73 /* AddFriendController.m in Sources */,
 				439CFA771F3C3DA30093BE8B /* YYAsyncLayer.m in Sources */,
 				439CF8AC1F3BE5B10093BE8B /* XYRootViewController.m in Sources */,
 				439CF8BB1F3BE7B00093BE8B /* XYRootTabsController.m in Sources */,

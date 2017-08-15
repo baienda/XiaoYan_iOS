@@ -37,8 +37,9 @@
     if (self)
     {
         _infoView = [[UILabel alloc] init];
-        _infoView.font = kFont(16* autoLayoutY);
+        _infoView.font = kFont(12* autoLayoutY);
         _infoView.textColor = kGrayColor;
+        
         [self.wrapView addSubview:_infoView];
     }
     return self;
@@ -67,7 +68,6 @@
     [_infoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.mas_equalTo(weakSelf.wrapView.mas_centerY);
         make.right.mas_equalTo(-kLeadingMargin);
-        make.width.mas_equalTo(70* autoLayoutX);
     }];
 }
 - (void)prepareForReuse
