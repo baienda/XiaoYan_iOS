@@ -10,6 +10,7 @@
 #import "MineProfileController.h"
 #import "SettingRemindController.h"
 #import "SettingPasswordController.h"
+#import "ChatBaseController.h"
 
 #import "MineBaseCell.h"
 
@@ -226,30 +227,33 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    if (indexPath.section == 0) {
-//        if (indexPath.row == 0) {
-//
-//        }
-//        if (indexPath.row == 1) {
-//
-//        }
-//    }
-//    if (indexPath.section == 1) {
-//        if (indexPath.row == 0) {
-//
-//        }
-//        if (indexPath.row == 1) {
-//
-//        }
-//        if (indexPath.row == 2) {
-//
-//        }
-//    }
-//    if (indexPath.section == 2) {
-//        if (indexPath.row == 0) {
-//
-//        }
-//    }
+    
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+
+        }
+        if (indexPath.row == 1) {
+
+        }
+    }
+    if (indexPath.section == 1) {
+        if (indexPath.row == 0) {
+
+            ChatBaseController* chatBaseVC = [[ChatBaseController alloc] init];
+            [self pushViewController:chatBaseVC animated:YES];
+        }
+        if (indexPath.row == 1) {
+
+        }
+        if (indexPath.row == 2) {
+
+        }
+    }
+    if (indexPath.section == 2) {
+        if (indexPath.row == 0) {
+
+        }
+    }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
