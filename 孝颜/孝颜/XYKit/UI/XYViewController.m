@@ -27,6 +27,8 @@
 
 @property (nonatomic, assign) BOOL animationFinished;
 
+@property (nonatomic, strong) MBProgressHUD *hud;
+
 @end
 
 @implementation XYViewController
@@ -524,6 +526,17 @@
 //    return imageView;
 //}
 
+- (void)showCustonLoading {
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.hud = hud;
+}
+- (void)hideCustonLoading {
+    
+    if (self.hud) {
+        [self.hud hideAnimated:YES];
+    }
+}
 - (void)setUpSuccessHUD{
     
     //然后显示一个成功的提示；

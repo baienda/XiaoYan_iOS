@@ -85,6 +85,9 @@ typedef void(^accountLoadedBlock)();
 - (void)hideLoading;
 - (void)showPageLoading;
 - (void)hidePageLoading;
+//菊花加载
+- (void)showCustonLoading;
+- (void)hideCustonLoading;
 
 - (void)setUpSuccessHUD;
 - (void)setUpSuccessHUD :(NSString*)text;

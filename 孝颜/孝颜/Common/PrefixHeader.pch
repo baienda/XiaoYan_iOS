@@ -27,6 +27,8 @@
 #import "NSString+Array.h"
 #import "UIImage+Add.h"
 #import "UserConfig.h"
+#import "JSONModel.h"
+#import "AvatarView.h"
 
 #import "UIButton+CCButton.h"
 

@@ -265,10 +265,7 @@
     _centerView.frame = CGRectMake(CGRectGetMaxX(_leftView.frame), CGRectGetMaxY(_upView.frame), scanViewW, scanViewW);
     //扫描线
     _line.frame = CGRectMake((ScreenWidth - scanViewW) * 0.5, CGRectGetMaxY(_upView.frame), scanViewW, 2);
-
 }
-
-
 /**
  *  添加扫码动画
  */

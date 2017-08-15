@@ -59,9 +59,19 @@ static CGFloat kTextFieldH = 56;
 }
 - (void) finishClick {
     
-    //测试
+    //测试提示
 //    [self setUpOnlyTextHUD:Localized(@"网络错误")];
-    [self setUpCustomSuccessHUD:Localized(@"上传头像成功")];
+//    [self setUpCustomSuccessHUD:Localized(@"上传头像成功")];
+    //测试加载HUD
+//    [self showCustonLoading];
+//    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3/*延迟执行时间*/ * NSEC_PER_SEC));
+//    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+//        [self hideCustonLoading];
+//    });
+    //测试页面Loading
+    
+    
+
     
 //    if ([self isEmpty:self.mineNicknameTextfield.text] == true) {
 //        MyLog(@"为空，不能发");

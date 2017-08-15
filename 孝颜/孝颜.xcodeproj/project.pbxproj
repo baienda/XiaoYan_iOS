@@ -61,6 +61,21 @@
 		4308DBDE1F42A03B00EE0E73 /* scanline.png in Resources */ = {isa = PBXBuildFile; fileRef = 4308DBDA1F42A03B00EE0E73 /* scanline.png */; };
 		4308DBDF1F42A03B00EE0E73 /* XYMScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBDC1F42A03B00EE0E73 /* XYMScanView.m */; };
 		4308DBE21F42A08200EE0E73 /* ERCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBE11F42A08200EE0E73 /* ERCodeController.m */; };
+		4308DBE51F42C52400EE0E73 /* NSString+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBE41F42C52400EE0E73 /* NSString+Add.m */; };
+		4308DBE81F42C60600EE0E73 /* ContactDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBE71F42C60600EE0E73 /* ContactDataHelper.m */; };
+		4308DBEB1F42C6CD00EE0E73 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBEA1F42C6CD00EE0E73 /* ContactModel.m */; };
+		4308DC061F42C75700EE0E73 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBEF1F42C75700EE0E73 /* JSONModel.m */; };
+		4308DC071F42C75700EE0E73 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBF11F42C75700EE0E73 /* JSONModelArray.m */; };
+		4308DC081F42C75700EE0E73 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBF31F42C75700EE0E73 /* JSONModelClassProperty.m */; };
+		4308DC091F42C75700EE0E73 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBF51F42C75700EE0E73 /* JSONModelError.m */; };
+		4308DC0A1F42C75700EE0E73 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBF81F42C75700EE0E73 /* NSArray+JSONModel.m */; };
+		4308DC0B1F42C75700EE0E73 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBFC1F42C75700EE0E73 /* JSONAPI.m */; };
+		4308DC0C1F42C75700EE0E73 /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBFE1F42C75700EE0E73 /* JSONHTTPClient.m */; };
+		4308DC0D1F42C75700EE0E73 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC001F42C75700EE0E73 /* JSONModel+networking.m */; };
+		4308DC0E1F42C75700EE0E73 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC031F42C75700EE0E73 /* JSONKeyMapper.m */; };
+		4308DC0F1F42C75700EE0E73 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC051F42C75700EE0E73 /* JSONValueTransformer.m */; };
+		4308DC121F42C89200EE0E73 /* BaseContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC111F42C89200EE0E73 /* BaseContactCell.m */; };
+		4308DC151F42C8C400EE0E73 /* NewContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DC141F42C8C400EE0E73 /* NewContactCell.m */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -316,6 +331,37 @@
 		4308DBDC1F42A03B00EE0E73 /* XYMScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYMScanView.m; sourceTree = "<group>"; };
 		4308DBE01F42A08200EE0E73 /* ERCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ERCodeController.h; sourceTree = "<group>"; };
 		4308DBE11F42A08200EE0E73 /* ERCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ERCodeController.m; sourceTree = "<group>"; };
+		4308DBE31F42C52400EE0E73 /* NSString+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Add.h"; sourceTree = "<group>"; };
+		4308DBE41F42C52400EE0E73 /* NSString+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Add.m"; sourceTree = "<group>"; };
+		4308DBE61F42C60600EE0E73 /* ContactDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDataHelper.h; sourceTree = "<group>"; };
+		4308DBE71F42C60600EE0E73 /* ContactDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDataHelper.m; sourceTree = "<group>"; };
+		4308DBE91F42C6CD00EE0E73 /* ContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
+		4308DBEA1F42C6CD00EE0E73 /* ContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
+		4308DBEE1F42C75700EE0E73 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		4308DBEF1F42C75700EE0E73 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		4308DBF01F42C75700EE0E73 /* JSONModelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelArray.h; sourceTree = "<group>"; };
+		4308DBF11F42C75700EE0E73 /* JSONModelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelArray.m; sourceTree = "<group>"; };
+		4308DBF21F42C75700EE0E73 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		4308DBF31F42C75700EE0E73 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		4308DBF41F42C75700EE0E73 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		4308DBF51F42C75700EE0E73 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		4308DBF71F42C75700EE0E73 /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		4308DBF81F42C75700EE0E73 /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		4308DBF91F42C75700EE0E73 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		4308DBFB1F42C75700EE0E73 /* JSONAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONAPI.h; sourceTree = "<group>"; };
+		4308DBFC1F42C75700EE0E73 /* JSONAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONAPI.m; sourceTree = "<group>"; };
+		4308DBFD1F42C75700EE0E73 /* JSONHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONHTTPClient.h; sourceTree = "<group>"; };
+		4308DBFE1F42C75700EE0E73 /* JSONHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONHTTPClient.m; sourceTree = "<group>"; };
+		4308DBFF1F42C75700EE0E73 /* JSONModel+networking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSONModel+networking.h"; sourceTree = "<group>"; };
+		4308DC001F42C75700EE0E73 /* JSONModel+networking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSONModel+networking.m"; sourceTree = "<group>"; };
+		4308DC021F42C75700EE0E73 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		4308DC031F42C75700EE0E73 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		4308DC041F42C75700EE0E73 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		4308DC051F42C75700EE0E73 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		4308DC101F42C89200EE0E73 /* BaseContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseContactCell.h; sourceTree = "<group>"; };
+		4308DC111F42C89200EE0E73 /* BaseContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseContactCell.m; sourceTree = "<group>"; };
+		4308DC131F42C8C400EE0E73 /* NewContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewContactCell.h; sourceTree = "<group>"; };
+		4308DC141F42C8C400EE0E73 /* NewContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewContactCell.m; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -875,6 +921,66 @@
 			path = XYMScan;
 			sourceTree = "<group>";
 		};
+		4308DBEC1F42C75700EE0E73 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				4308DBED1F42C75700EE0E73 /* JSONModel */,
+				4308DBF61F42C75700EE0E73 /* JSONModelCategories */,
+				4308DBF91F42C75700EE0E73 /* JSONModelLib.h */,
+				4308DBFA1F42C75700EE0E73 /* JSONModelNetworking */,
+				4308DC011F42C75700EE0E73 /* JSONModelTransformations */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		4308DBED1F42C75700EE0E73 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				4308DBEE1F42C75700EE0E73 /* JSONModel.h */,
+				4308DBEF1F42C75700EE0E73 /* JSONModel.m */,
+				4308DBF01F42C75700EE0E73 /* JSONModelArray.h */,
+				4308DBF11F42C75700EE0E73 /* JSONModelArray.m */,
+				4308DBF21F42C75700EE0E73 /* JSONModelClassProperty.h */,
+				4308DBF31F42C75700EE0E73 /* JSONModelClassProperty.m */,
+				4308DBF41F42C75700EE0E73 /* JSONModelError.h */,
+				4308DBF51F42C75700EE0E73 /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		4308DBF61F42C75700EE0E73 /* JSONModelCategories */ = {
+			isa = PBXGroup;
+			children = (
+				4308DBF71F42C75700EE0E73 /* NSArray+JSONModel.h */,
+				4308DBF81F42C75700EE0E73 /* NSArray+JSONModel.m */,
+			);
+			path = JSONModelCategories;
+			sourceTree = "<group>";
+		};
+		4308DBFA1F42C75700EE0E73 /* JSONModelNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				4308DBFB1F42C75700EE0E73 /* JSONAPI.h */,
+				4308DBFC1F42C75700EE0E73 /* JSONAPI.m */,
+				4308DBFD1F42C75700EE0E73 /* JSONHTTPClient.h */,
+				4308DBFE1F42C75700EE0E73 /* JSONHTTPClient.m */,
+				4308DBFF1F42C75700EE0E73 /* JSONModel+networking.h */,
+				4308DC001F42C75700EE0E73 /* JSONModel+networking.m */,
+			);
+			path = JSONModelNetworking;
+			sourceTree = "<group>";
+		};
+		4308DC011F42C75700EE0E73 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				4308DC021F42C75700EE0E73 /* JSONKeyMapper.h */,
+				4308DC031F42C75700EE0E73 /* JSONKeyMapper.m */,
+				4308DC041F42C75700EE0E73 /* JSONValueTransformer.h */,
+				4308DC051F42C75700EE0E73 /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
+			sourceTree = "<group>";
+		};
 		439CF8521F3B1B1F0093BE8B = {
 			isa = PBXGroup;
 			children = (
@@ -1015,6 +1121,8 @@
 		439CF87E1F3BE02B0093BE8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4308DBE91F42C6CD00EE0E73 /* ContactModel.h */,
+				4308DBEA1F42C6CD00EE0E73 /* ContactModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1029,6 +1137,10 @@
 		439CF8801F3BE02B0093BE8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4308DC101F42C89200EE0E73 /* BaseContactCell.h */,
+				4308DC111F42C89200EE0E73 /* BaseContactCell.m */,
+				4308DC131F42C8C400EE0E73 /* NewContactCell.h */,
+				4308DC141F42C8C400EE0E73 /* NewContactCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1049,6 +1161,8 @@
 				439CF8F11F3BEA800093BE8B /* PrefixHeader.pch */,
 				439CF8F21F3BEA800093BE8B /* SoundTool.h */,
 				439CF8F31F3BEA800093BE8B /* SoundTool.m */,
+				4308DBE61F42C60600EE0E73 /* ContactDataHelper.h */,
+				4308DBE71F42C60600EE0E73 /* ContactDataHelper.m */,
 				439CF8E71F3BEA800093BE8B /* 孝颜-Bridging-Header.h */,
 			);
 			path = Common;
@@ -1108,6 +1222,7 @@
 		439CF8871F3BE02B0093BE8B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4308DBEC1F42C75700EE0E73 /* JSONModel */,
 				4308DBD81F42A03B00EE0E73 /* XYMScan */,
 				4308DBC21F42894700EE0E73 /* MBProgressHUD */,
 				4308DB341F41831500EE0E73 /* UMSocial */,
@@ -1369,6 +1484,8 @@
 				439CF8DC1F3BEA670093BE8B /* UIView+animation.m */,
 				439CF8DD1F3BEA670093BE8B /* UIView+SubView.h */,
 				439CF8DE1F3BEA670093BE8B /* UIView+SubView.m */,
+				4308DBE31F42C52400EE0E73 /* NSString+Add.h */,
+				4308DBE41F42C52400EE0E73 /* NSString+Add.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1887,9 +2004,11 @@
 				439CF9351F3BFA0E0093BE8B /* MJRefreshBackGifFooter.m in Sources */,
 				4308DBDF1F42A03B00EE0E73 /* XYMScanView.m in Sources */,
 				439CFA711F3C3DA30093BE8B /* YYTextRubyAnnotation.m in Sources */,
+				4308DC121F42C89200EE0E73 /* BaseContactCell.m in Sources */,
 				439CFA811F3C3DA30093BE8B /* YYTransaction.m in Sources */,
 				439CFA7F1F3C3DA30093BE8B /* YYThreadSafeDictionary.m in Sources */,
 				439CFA701F3C3DA30093BE8B /* YYTextParser.m in Sources */,
+				4308DC071F42C75700EE0E73 /* JSONModelArray.m in Sources */,
 				4308DB141F412EF600EE0E73 /* SettingRemindController.m in Sources */,
 				4308DB231F414B8500EE0E73 /* NicknameController.m in Sources */,
 				439CFA4F1F3C3DA30093BE8B /* YYDiskCache.m in Sources */,
@@ -1933,23 +2052,28 @@
 				439CF9431F3BFA940093BE8B /* XYLabel.m in Sources */,
 				439CFA5D1F3C3DA30093BE8B /* YYWebImageManager.m in Sources */,
 				4308DADE1F3C4ED200EE0E73 /* CourseDetailsController.m in Sources */,
+				4308DC0E1F42C75700EE0E73 /* JSONKeyMapper.m in Sources */,
 				4308DBD71F429B8500EE0E73 /* DetailInfoController.m in Sources */,
 				439CFA5F1F3C3DA30093BE8B /* UIImageView+XHURLDownload.m in Sources */,
 				439CF8CD1F3BE91C0093BE8B /* UserConfig.m in Sources */,
 				439CFA791F3C3DA30093BE8B /* YYFileHash.m in Sources */,
 				4308DB1A1F41323D00EE0E73 /* SettingTextCell.m in Sources */,
+				4308DC0D1F42C75700EE0E73 /* JSONModel+networking.m in Sources */,
 				4308DB091F3D931B00EE0E73 /* MineBaseCell.m in Sources */,
 				439CF9361F3BFA0E0093BE8B /* MJRefreshBackNormalFooter.m in Sources */,
 				439CF93A1F3BFA0E0093BE8B /* MJRefreshStateHeader.m in Sources */,
 				4308DB301F414CCC00EE0E73 /* MineERCodeController.m in Sources */,
 				4308DAEE1F3D502400EE0E73 /* VideoNewsModel.m in Sources */,
 				439CF92E1F3BFA0E0093BE8B /* MJRefreshBackFooter.m in Sources */,
+				4308DC0F1F42C75700EE0E73 /* JSONValueTransformer.m in Sources */,
 				439CFA481F3C3DA30093BE8B /* UIImage+YYAdd.m in Sources */,
 				439CFA321F3C3DA30093BE8B /* NSData+YYAdd.m in Sources */,
+				4308DBE81F42C60600EE0E73 /* ContactDataHelper.m in Sources */,
 				439CFA361F3C3DA30093BE8B /* NSNotificationCenter+YYAdd.m in Sources */,
 				439CFA631F3C3DA30093BE8B /* YYTextDebugOption.m in Sources */,
 				4308DAE41F3C64CF00EE0E73 /* ActivityDetailsController.m in Sources */,
 				439CF8E61F3BEA670093BE8B /* UIView+SubView.m in Sources */,
+				4308DC0B1F42C75700EE0E73 /* JSONAPI.m in Sources */,
 				439CFA371F3C3DA30093BE8B /* NSNumber+YYAdd.m in Sources */,
 				4308DADB1F3C4A2800EE0E73 /* SelectCityController.m in Sources */,
 				439CFA6F1F3C3DA30093BE8B /* YYTextAttribute.m in Sources */,
@@ -1971,6 +2095,7 @@
 				439CFA561F3C3DA30093BE8B /* UIImageView+YYWebImage.m in Sources */,
 				4308DB061F3D89D800EE0E73 /* FTPopOverMenu.m in Sources */,
 				439CF8E01F3BEA670093BE8B /* NSString+Array.m in Sources */,
+				4308DC081F42C75700EE0E73 /* JSONModelClassProperty.m in Sources */,
 				4308DAF91F3D666E00EE0E73 /* VideoHotTypeHeaderView.m in Sources */,
 				439CFA401F3C3DA30093BE8B /* UIApplication+YYAdd.m in Sources */,
 				4308DB171F41307100EE0E73 /* SettingPasswordController.m in Sources */,
@@ -1978,6 +2103,8 @@
 				4308DBD11F42959100EE0E73 /* DialogListController.m in Sources */,
 				439CF8E31F3BEA670093BE8B /* UIButton+ImageTitleSpacing.m in Sources */,
 				439CF8A61F3BE2D40093BE8B /* HttpClient.m in Sources */,
+				4308DC0C1F42C75700EE0E73 /* JSONHTTPClient.m in Sources */,
+				4308DBE51F42C52400EE0E73 /* NSString+Add.m in Sources */,
 				4308DB2A1F414C6600EE0E73 /* RealNameController.m in Sources */,
 				4308DBE21F42A08200EE0E73 /* ERCodeController.m in Sources */,
 				439CFA7D1F3C3DA30093BE8B /* YYSentinel.m in Sources */,
@@ -1987,6 +2114,7 @@
 				439CFA581F3C3DA30093BE8B /* YYFrameImage.m in Sources */,
 				439CFA651F3C3DA30093BE8B /* YYTextInput.m in Sources */,
 				439CFA461F3C3DA30093BE8B /* UIFont+YYAdd.m in Sources */,
+				4308DC151F42C8C400EE0E73 /* NewContactCell.m in Sources */,
 				439CFA5B1F3C3DA30093BE8B /* YYImageCoder.m in Sources */,
 				439CFA551F3C3DA30093BE8B /* UIButton+YYWebImage.m in Sources */,
 				439CFA491F3C3DA30093BE8B /* UIScreen+YYAdd.m in Sources */,
@@ -1996,6 +2124,7 @@
 				439CFA641F3C3DA30093BE8B /* YYTextEffectWindow.m in Sources */,
 				439CFA441F3C3DA30093BE8B /* UIControl+YYAdd.m in Sources */,
 				4308DB021F3D7B2200EE0E73 /* VideoTypeCell.m in Sources */,
+				4308DBEB1F42C6CD00EE0E73 /* ContactModel.m in Sources */,
 				439CFA591F3C3DA30093BE8B /* YYImage.m in Sources */,
 				439CFA3F1F3C3DA30093BE8B /* YYCGUtilities.m in Sources */,
 				439CFA821F3C3DA30093BE8B /* YYWeakProxy.m in Sources */,
@@ -2015,6 +2144,7 @@
 				439CFA341F3C3DA30093BE8B /* NSDictionary+YYAdd.m in Sources */,
 				439CF9381F3BFA0E0093BE8B /* MJRefreshGifHeader.m in Sources */,
 				439CF8F61F3BEA800093BE8B /* Common.m in Sources */,
+				4308DC0A1F42C75700EE0E73 /* NSArray+JSONModel.m in Sources */,
 				439CFA6B1F3C3DA30093BE8B /* NSAttributedString+YYText.m in Sources */,
 				4308DBC81F428A2200EE0E73 /* MBProgressHUD+Add.m in Sources */,
 				439CF8DF1F3BEA670093BE8B /* NSDate+time.m in Sources */,
@@ -2022,6 +2152,7 @@
 				4308DAE11F3C5D0C00EE0E73 /* ActivityCell.m in Sources */,
 				439CFA661F3C3DA30093BE8B /* YYTextKeyboardManager.m in Sources */,
 				439CFA3A1F3C3DA30093BE8B /* NSObject+YYAddForKVO.m in Sources */,
+				4308DC091F42C75700EE0E73 /* JSONModelError.m in Sources */,
 				439CFA691F3C3DA30093BE8B /* YYTextMagnifier.m in Sources */,
 				439CFA351F3C3DA30093BE8B /* NSKeyedUnarchiver+YYAdd.m in Sources */,
 				439CF93F1F3BFA0E0093BE8B /* UIScrollView+MJRefresh.m in Sources */,
@@ -2042,6 +2173,7 @@
 				439CF8F51F3BEA800093BE8B /* ColorImageTool.m in Sources */,
 				439CFA5A1F3C3DA30093BE8B /* YYImageCache.m in Sources */,
 				439CF8A31F3BE21A0093BE8B /* ApiClient.m in Sources */,
+				4308DC061F42C75700EE0E73 /* JSONModel.m in Sources */,
 				439CF9731F3C2CBB0093BE8B /* XYTableViewCell.m in Sources */,
 				439CFA3E1F3C3DA30093BE8B /* CALayer+YYAdd.m in Sources */,
 				439CFA331F3C3DA30093BE8B /* NSDate+YYAdd.m in Sources */,
