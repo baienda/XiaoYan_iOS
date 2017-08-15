@@ -89,6 +89,10 @@ typedef void(^accountLoadedBlock)();
 - (void)setUpSuccessHUD;
 - (void)setUpSuccessHUD :(NSString*)text;
 - (void)setUpErrorHUD :(NSString*)error;
+//只有文字提示
+- (void)setUpOnlyTextHUD :(NSString*)text;
+//对勾成功
+- (void)setUpCustomSuccessHUD:(NSString*)text;
 
 - (BOOL)handlerError:(id)error;
 

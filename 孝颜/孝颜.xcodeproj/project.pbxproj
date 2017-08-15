@@ -48,6 +48,10 @@
 		4308DB5B1F41831500EE0E73 /* libUMSocialLog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4308DB4D1F41831500EE0E73 /* libUMSocialLog.a */; };
 		4308DB5C1F41831500EE0E73 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4308DB4F1F41831500EE0E73 /* UMSocialSDKResources.bundle */; };
 		4308DB5D1F41831500EE0E73 /* UShareUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4308DB501F41831500EE0E73 /* UShareUI.framework */; };
+		4308DBBF1F42878200EE0E73 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4308DBBE1F42878200EE0E73 /* UIKit.framework */; };
+		4308DBC11F42879B00EE0E73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4308DBC01F42879B00EE0E73 /* Foundation.framework */; };
+		4308DBC51F42894700EE0E73 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBC41F42894700EE0E73 /* MBProgressHUD.m */; };
+		4308DBC81F428A2200EE0E73 /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DBC71F428A2200EE0E73 /* MBProgressHUD+Add.m */; };
 		439CF8601F3B1B200093BE8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF85F1F3B1B200093BE8B /* main.m */; };
 		439CF8631F3B1B200093BE8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 439CF8621F3B1B200093BE8B /* AppDelegate.m */; };
 		439CF86B1F3B1B200093BE8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 439CF86A1F3B1B200093BE8B /* Assets.xcassets */; };
@@ -281,6 +285,12 @@
 		4308DB4D1F41831500EE0E73 /* libUMSocialLog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocialLog.a; sourceTree = "<group>"; };
 		4308DB4F1F41831500EE0E73 /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
 		4308DB501F41831500EE0E73 /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
+		4308DBBE1F42878200EE0E73 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4308DBC01F42879B00EE0E73 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4308DBC31F42894700EE0E73 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		4308DBC41F42894700EE0E73 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		4308DBC61F428A2200EE0E73 /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
+		4308DBC71F428A2200EE0E73 /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
 		439CF85B1F3B1B1F0093BE8B /* 孝颜.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "孝颜.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		439CF85F1F3B1B200093BE8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		439CF8611F3B1B200093BE8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "孝颜/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
@@ -591,6 +601,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4308DBC11F42879B00EE0E73 /* Foundation.framework in Frameworks */,
+				4308DBBF1F42878200EE0E73 /* UIKit.framework in Frameworks */,
 				4308DB541F41831500EE0E73 /* libSocialUniqueId.a in Frameworks */,
 				4308DB511F41831500EE0E73 /* libSocialQQ.a in Frameworks */,
 				439CF9661F3C0E920093BE8B /* CoreMedia.framework in Frameworks */,
@@ -626,6 +638,8 @@
 		1B44DAE4AAAD5D6B8102FB61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4308DBC01F42879B00EE0E73 /* Foundation.framework */,
+				4308DBBE1F42878200EE0E73 /* UIKit.framework */,
 				439CF9651F3C0E920093BE8B /* CoreMedia.framework */,
 				439CF9631F3C0E860093BE8B /* AudioToolbox.framework */,
 				439CF9611F3C0E5E0093BE8B /* AVFoundation.framework */,
@@ -812,6 +826,17 @@
 				4308DB501F41831500EE0E73 /* UShareUI.framework */,
 			);
 			path = UMSocialUI;
+			sourceTree = "<group>";
+		};
+		4308DBC21F42894700EE0E73 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				4308DBC31F42894700EE0E73 /* MBProgressHUD.h */,
+				4308DBC41F42894700EE0E73 /* MBProgressHUD.m */,
+				4308DBC61F428A2200EE0E73 /* MBProgressHUD+Add.h */,
+				4308DBC71F428A2200EE0E73 /* MBProgressHUD+Add.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		439CF8521F3B1B1F0093BE8B = {
@@ -1037,6 +1062,7 @@
 		439CF8871F3BE02B0093BE8B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4308DBC21F42894700EE0E73 /* MBProgressHUD */,
 				4308DB341F41831500EE0E73 /* UMSocial */,
 				4308DB031F3D89D800EE0E73 /* FTPopOverMenu */,
 				439CF97A1F3C3DA30093BE8B /* YYKit */,
@@ -1934,6 +1960,7 @@
 				439CF9381F3BFA0E0093BE8B /* MJRefreshGifHeader.m in Sources */,
 				439CF8F61F3BEA800093BE8B /* Common.m in Sources */,
 				439CFA6B1F3C3DA30093BE8B /* NSAttributedString+YYText.m in Sources */,
+				4308DBC81F428A2200EE0E73 /* MBProgressHUD+Add.m in Sources */,
 				439CF8DF1F3BEA670093BE8B /* NSDate+time.m in Sources */,
 				439CF9761F3C2D670093BE8B /* HotCourseCell.m in Sources */,
 				4308DAE11F3C5D0C00EE0E73 /* ActivityCell.m in Sources */,
@@ -1966,6 +1993,7 @@
 				439CFA7B1F3C3DA30093BE8B /* YYKeychain.m in Sources */,
 				439CFA4A1F3C3DA30093BE8B /* UIScrollView+YYAdd.m in Sources */,
 				439CF8F91F3BEA800093BE8B /* SoundTool.m in Sources */,
+				4308DBC51F42894700EE0E73 /* MBProgressHUD.m in Sources */,
 				439CF92F1F3BFA0E0093BE8B /* MJRefreshComponent.m in Sources */,
 				439CFA431F3C3DA30093BE8B /* UIColor+YYAdd.m in Sources */,
 				439CF8C71F3BE8AA0093BE8B /* XYWebController.m in Sources */,

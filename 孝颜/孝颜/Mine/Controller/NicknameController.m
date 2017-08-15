@@ -51,7 +51,7 @@ static CGFloat kTextFieldH = 56;
 - (void)setNavigationBar{
     
     UIButton *okBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [okBtn addTarget:self action:@selector(relationshipFinishClick) forControlEvents:UIControlEventTouchUpInside];
+    [okBtn addTarget:self action:@selector(finishClick) forControlEvents:UIControlEventTouchUpInside];
     self.finishBtn = okBtn;
     self.finishBtn.enabled = YES;
     [self setCustomFinishNavBar:Localized(@"昵称") rightBtn:okBtn rightTitle:Localized(@"保存")];
@@ -59,25 +59,29 @@ static CGFloat kTextFieldH = 56;
 }
 - (void) finishClick {
     
-    if ([self isEmpty:self.mineNicknameTextfield.text] == true) {
-        MyLog(@"为空，不能发");
-//        [self alert:Localized(@"err_enter_empty") button:Localized(@"ok") click:nil];
-        //退出键盘
-        [self.mineNicknameTextfield resignFirstResponder];
-        
-    }else {
-        MyLog(@"不为空，能发");
-        //block传值
-        if (self.SelectArrBlock) {
-            
-            self.mineNicknameTextfield.text = [self.mineNicknameTextfield.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            
-            self.SelectArrBlock(self.mineNicknameTextfield.text);
-        }
-        [self.navigationController popViewControllerAnimated:YES];
-        
-        //[[EMClient sharedClient] updatePushNotifiationDisplayName:self.mineNicknameTextfield.text completion:nil];
-    }
+    //测试
+//    [self setUpOnlyTextHUD:Localized(@"网络错误")];
+    [self setUpCustomSuccessHUD:Localized(@"上传头像成功")];
+    
+//    if ([self isEmpty:self.mineNicknameTextfield.text] == true) {
+//        MyLog(@"为空，不能发");
+////        [self alert:Localized(@"err_enter_empty") button:Localized(@"ok") click:nil];
+//        //退出键盘
+//        [self.mineNicknameTextfield resignFirstResponder];
+//        
+//    }else {
+//        MyLog(@"不为空，能发");
+//        //block传值
+//        if (self.SelectArrBlock) {
+//            
+//            self.mineNicknameTextfield.text = [self.mineNicknameTextfield.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+//            
+//            self.SelectArrBlock(self.mineNicknameTextfield.text);
+//        }
+//        [self.navigationController popViewControllerAnimated:YES];
+//        
+//        //[[EMClient sharedClient] updatePushNotifiationDisplayName:self.mineNicknameTextfield.text completion:nil];
+//    }
 }
 - (void)addTextfield {
     

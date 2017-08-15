@@ -524,35 +524,51 @@
 //    return imageView;
 //}
 
-//- (void)setUpSuccessHUD{
-//    
-//    //然后显示一个成功的提示；
-//    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
-//    successHUD.labelText = Localized(@"success");
-//    successHUD.mode = MBProgressHUDModeText;
-//    successHUD.removeFromSuperViewOnHide = true;
-//    [successHUD hide:true afterDelay:0.5];
-//    
-//}
-//- (void)setUpSuccessHUD :(NSString*)text{
-//    
-//    //然后显示一个成功的提示；
-//    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
-//    successHUD.labelText = text;
-//    successHUD.mode = MBProgressHUDModeText;
-//    successHUD.removeFromSuperViewOnHide = true;
-//    [successHUD hide:true afterDelay:0.5];
-//}
-//- (void)setUpErrorHUD :(NSString*)error {
-//    
-//    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
-//    successHUD.labelText = error;
-//    successHUD.mode = MBProgressHUDModeText;
-//    successHUD.removeFromSuperViewOnHide = true;
-//    [successHUD hide:true afterDelay:0.5];
-//}
-
-
+- (void)setUpSuccessHUD{
+    
+    //然后显示一个成功的提示；
+    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+    successHUD.label.text = Localized(@"success");
+    successHUD.mode = MBProgressHUDModeText;
+    successHUD.removeFromSuperViewOnHide = true;
+    [successHUD hideAnimated:true afterDelay:0.5];
+    
+}
+- (void)setUpSuccessHUD :(NSString*)text{
+    
+    //然后显示一个成功的提示；
+    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+    successHUD.label.text = text;
+    successHUD.mode = MBProgressHUDModeText;
+    successHUD.removeFromSuperViewOnHide = true;
+    [successHUD hideAnimated:true afterDelay:0.5];
+}
+- (void)setUpErrorHUD :(NSString*)error {
+    
+    MBProgressHUD *successHUD = [MBProgressHUD showHUDAddedTo:self.view animated:true];
+    successHUD.label.text = error;
+    successHUD.mode = MBProgressHUDModeText;
+    successHUD.removeFromSuperViewOnHide = true;
+    [successHUD hideAnimated:true afterDelay:0.5];
+}
+- (void)setUpOnlyTextHUD :(NSString*)text {
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = text;
+    hud.offset = CGPointMake(0.f, 0.f);
+    [hud hideAnimated:YES afterDelay:3.f];
+}
+- (void)setUpCustomSuccessHUD:(NSString*)text {
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeCustomView;
+    UIImage *image = [[UIImage imageNamed:@"2"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    hud.customView = [[UIImageView alloc] initWithImage:image];
+    hud.square = YES;
+    hud.label.text = text;
+    [hud hideAnimated:YES afterDelay:3.f];
+}
 //- (BOOL)handlerError:(id)error
 //{
 //    if([error[@"errno"] intValue2] == 1)
