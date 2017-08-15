@@ -16,7 +16,7 @@
 #import "FTPopOverMenu.h"
 
 
-@interface MineViewController ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate>
+@interface MineViewController ()<UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UIActionSheetDelegate>
 
 @property(nonatomic, strong)UITableView     *tableView;
 @property(nonatomic, strong)UIImageView     *headerBackView;//头像背景图片
@@ -85,6 +85,10 @@
     _headerBackView.frame = CGRectMake(0, 0, DEVICE_SIZE.width, _imageHeight);
     [_headerBackView setThumbnailWithURL:@"https://n.sinaimg.cn/news/20170808/u1kQ-fyitapv9390785.jpg" completion:nil];
     [_tableViewHeaderView addSubview:_headerBackView];
+    _tableViewHeaderView.userInteractionEnabled = YES;
+    UITapGestureRecognizer* singelBgRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(signaBgTap)];
+    [_tableViewHeaderView addGestureRecognizer:singelBgRecognizer];
+
     
     // 头像
     _photoImageView = [[UIImageView alloc] initWithFrame:CGRectMake((DEVICE_SIZE.width - 100) / 2, 50, 100, 100)];
@@ -116,7 +120,13 @@
     
     self.tableView.tableHeaderView = _tableViewHeaderView;
 }
+- (void)signaBgTap {
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"设置封面" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从手机相册选择",nil];
+    actionSheet.actionSheetStyle = UIActionSheetStyleDefault;//默认风格，灰色背景，白色文字
+    [actionSheet showInView:self.view];
 
+}
 - (void)signalIconTap {
     
     MineProfileController* profile = [[MineProfileController alloc] init];
@@ -302,5 +312,14 @@
     
     
 }
-
+#pragma mark - UIActionSheetDelegate
+//根据被点击的按钮做出反应，0对应destructiveButton，之后的button依次排序
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        //拍照
+    }
+    else if (buttonIndex == 2) {
+        //相册
+    }
+}
 @end
