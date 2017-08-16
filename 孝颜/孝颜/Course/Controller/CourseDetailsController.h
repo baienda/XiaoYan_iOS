@@ -10,4 +10,6 @@
 
 @interface CourseDetailsController : XYViewController
 
+//@property (nonatomic, )
+
 @end

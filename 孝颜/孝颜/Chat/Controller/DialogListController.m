@@ -187,8 +187,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
 //    EMConversation *conversation = self.conversations.count;
     DialogCell *cell = [DialogCell cell:tableView];
 //    cell.conversation = conversation;
@@ -234,6 +232,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 //    EMConversation *conversation = self.conversations[indexPath.row];
     ChatViewController *chat = [[ChatViewController alloc] init];
     [self pushViewController:chat animated:YES];

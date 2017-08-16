@@ -10,6 +10,8 @@
 
 @interface CourseDetailsController ()
 
+@property (nonatomic, strong)UIScrollView* baseScrollview;
+
 @end
 
 @implementation CourseDetailsController
@@ -18,6 +20,8 @@
     [super viewDidLoad];
     self.view.backgroundColor = kWhiteColor;
     [self setNavigationBar];
+//    [self setBaseScrollView];
+//    [self addBaseView];
 }
 - (void)setNavigationBar{
     
