@@ -10,6 +10,8 @@
 #import "SelectCityController.h"
 #import "CourseDetailsController.h"
 
+#import "CourseModel.h"
+
 @interface CourseViewController ()<UITableViewDataSource, UITableViewDelegate>
 {
     BOOL canLoadMoreCourse;
@@ -242,6 +244,18 @@
         
     }else {
         CourseDetailsController* detailsVC = [[CourseDetailsController alloc] init];
+        //测试
+        CourseModel* model = [[CourseModel alloc] init];
+        model.large_image = [UIImage imageNamed:@"1"];
+        model.title = @"创意手工课程";
+        model.large_time = @"XXXX-xxxx";
+        model.large_location = @"北京......";
+        model.tele_num = @"17610996693";
+        model.loc_latitude = @"39.974897";
+        model.loc_longitude = @"116.490691";
+        
+        detailsVC.courseModel = model;
+
         [self pushViewController:detailsVC animated:YES];
     }
 }

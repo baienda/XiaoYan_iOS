@@ -7,9 +7,10 @@
 //
 
 #import "XYViewController.h"
+#import "CourseModel.h"
 
 @interface CourseDetailsController : XYViewController
 
-//@property (nonatomic, )
+@property (nonatomic, strong)CourseModel* courseModel;
 
 @end

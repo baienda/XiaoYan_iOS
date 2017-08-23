@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430350931F43D8C9004C2A40 /* XYBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 430350921F43D8C9004C2A40 /* XYBaseModel.m */; };
+		430350961F43DEB7004C2A40 /* CourseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 430350951F43DEB7004C2A40 /* CourseModel.m */; };
 		4308DADB1F3C4A2800EE0E73 /* SelectCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DADA1F3C4A2800EE0E73 /* SelectCityController.m */; };
 		4308DADE1F3C4ED200EE0E73 /* CourseDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DADD1F3C4ED200EE0E73 /* CourseDetailsController.m */; };
 		4308DAE11F3C5D0C00EE0E73 /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4308DAE01F3C5D0C00EE0E73 /* ActivityCell.m */; };
@@ -242,6 +244,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		430350911F43D8C9004C2A40 /* XYBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYBaseModel.h; sourceTree = "<group>"; };
+		430350921F43D8C9004C2A40 /* XYBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYBaseModel.m; sourceTree = "<group>"; };
+		430350941F43DEB7004C2A40 /* CourseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseModel.h; sourceTree = "<group>"; };
+		430350951F43DEB7004C2A40 /* CourseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseModel.m; sourceTree = "<group>"; };
 		4308DAD91F3C4A2800EE0E73 /* SelectCityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectCityController.h; sourceTree = "<group>"; };
 		4308DADA1F3C4A2800EE0E73 /* SelectCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectCityController.m; sourceTree = "<group>"; };
 		4308DADC1F3C4ED200EE0E73 /* CourseDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseDetailsController.h; sourceTree = "<group>"; };
@@ -1227,6 +1233,8 @@
 		439CF8841F3BE02B0093BE8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				430350941F43DEB7004C2A40 /* CourseModel.h */,
+				430350951F43DEB7004C2A40 /* CourseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1448,6 +1456,8 @@
 		439CF89A1F3BE02B0093BE8B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				430350911F43D8C9004C2A40 /* XYBaseModel.h */,
+				430350921F43D8C9004C2A40 /* XYBaseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2198,6 +2208,7 @@
 				439CF9461F3BFB710093BE8B /* WelcomeViewController.m in Sources */,
 				439CFA7A1F3C3DA30093BE8B /* YYGestureRecognizer.m in Sources */,
 				439CFA751F3C3DA30093BE8B /* YYTextView.m in Sources */,
+				430350961F43DEB7004C2A40 /* CourseModel.m in Sources */,
 				4308DB201F413EAD00EE0E73 /* IMNotice.m in Sources */,
 				439CF8E41F3BEA670093BE8B /* UIImage+Add.m in Sources */,
 				4308DBCB1F4291E000EE0E73 /* AvatarView.m in Sources */,
@@ -2222,6 +2233,7 @@
 				439CF92F1F3BFA0E0093BE8B /* MJRefreshComponent.m in Sources */,
 				439CFA431F3C3DA30093BE8B /* UIColor+YYAdd.m in Sources */,
 				439CF8C71F3BE8AA0093BE8B /* XYWebController.m in Sources */,
+				430350931F43D8C9004C2A40 /* XYBaseModel.m in Sources */,
 				4308DBCE1F42932D00EE0E73 /* ChatBaseController.m in Sources */,
 				439CF8E51F3BEA670093BE8B /* UIView+animation.m in Sources */,
 			);
