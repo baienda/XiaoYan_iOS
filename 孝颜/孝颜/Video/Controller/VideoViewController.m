@@ -31,6 +31,7 @@
     [self setNavigationBar];
     //添加网格视图
     [self setCollectionView];
+    
     //轮播
 //    [self setJKScrollFocus];
 }
